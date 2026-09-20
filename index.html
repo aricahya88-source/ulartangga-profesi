@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071422" />
+  <title>Ular Tangga 3D — 4 Kompetensi Guru</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <section class="player-card" id="player-card-0">
+        <span class="avatar blue">A</span>
+        <div><strong id="player-name-0">Player A</strong><small>Petak <b id="player-pos-0">0</b>/50 · Skor <b id="player-score-0">0</b> · Akurasi <b id="player-acc-0">–</b></small></div>
+      </section>
+      <section class="title-card"><h1>ULAR TANGGA 3D • 4 KOMPETENSI GURU</h1><span id="zone-pill">Mulai dari petak awal</span></section>
+      <section class="player-card red-side" id="player-card-1">
+        <span class="avatar red">B</span>
+        <div><strong id="player-name-1">Player B</strong><small>Petak <b id="player-pos-1">0</b>/50 · Skor <b id="player-score-1">0</b> · Akurasi <b id="player-acc-1">–</b></small></div>
+      </section>
+    </header>
+
+    <main class="game-grid">
+      <section class="scene-panel">
+        <div class="scene-badge">Setiap pendaratan = soal literasi sesuai zona • soal diacak tanpa pengulangan antarpemain</div>
+        <canvas id="renderCanvas" aria-label="Papan Ular Tangga 3D"></canvas>
+      </section>
+
+      <aside class="side-panel">
+        <section class="panel zone-panel">
+          <h2>Zona Materi</h2>
+          <p><i class="swatch ped"></i>1–10 · Pedagogik</p>
+          <p><i class="swatch pro"></i>11–20 · Profesional</p>
+          <p><i class="swatch kep"></i>21–30 · Kepribadian</p>
+          <p><i class="swatch sos"></i>31–40 · Sosial</p>
+          <p><i class="swatch int"></i>41–50 · Integratif</p>
+        </section>
+        <section class="panel control-panel">
+          <small>Giliran</small><h2 id="turn-name">PLAYER A</h2>
+          <div class="dice-result">🎲 <strong id="dice-value">–</strong></div>
+          <button id="roll-btn" class="primary">Lempar Dadu</button>
+          <button id="camera-btn">Sudut Papan</button>
+          <div class="question-count" id="question-count">Soal unik terpakai: 0 / 50</div>
+        </section>
+        <section class="panel log-panel"><h2>Log Permainan</h2><div id="log-list"></div></section>
+      </aside>
+    </main>
+  </div>
+
+  <div class="overlay" id="start-overlay">
+    <div class="start-card">
+      <span class="eyebrow">Game Edukasi · 1 vs 1 · Babylon.js</span>
+      <h2>Ular Tangga 3D — Empat Kompetensi Guru</h2>
+      <p>Petak 1–10 Pedagogik, 11–20 Profesional, 21–30 Kepribadian, 31–40 Sosial, dan 41–50 Integratif. Ada 5 ular, 5 tangga, 5 bonus, dan Final Challenge di petak 50.</p>
+      <div class="name-grid"><label>Nama Player A<input id="name-a" value="Player A" maxlength="24"></label><label>Nama Player B<input id="name-b" value="Player B" maxlength="24"></label></div>
+      <button id="start-btn" class="primary">Mulai Pertandingan</button>
+    </div>
+  </div>
+
+  <div class="overlay hidden" id="question-overlay"><div class="question-card" id="question-card"></div></div>
+  <div class="overlay hidden" id="win-overlay"><div class="win-card" id="win-card"></div></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
