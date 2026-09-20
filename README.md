@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**Versi 2.0.1**
+**Versi 2.1.0**
 
 Website statis 1 vs 1 berbasis **Vite + TypeScript + Babylon.js** dengan bank soal literasi 50 butir.
 
@@ -68,3 +68,12 @@ Komposisi tipe soal: 20 pilihan ganda, 10 benar/salah, 10 menjodohkan, dan 10 ja
 ## Perbaikan v2.0.1
 - Memperbaiki error build TypeScript pada `BoardScene.ts`: `ICanvasRenderingContext` tidak memiliki properti `textAlign`.
 - Label petak sekarang dipusatkan menggunakan `measureText()` sehingga kompatibel dengan tipe konteks Babylon.js.
+
+
+## Peningkatan visual v2.1.0
+- Pencahayaan ditingkatkan dengan kombinasi hemispheric light, directional light, spotlight hangat, dan rim point light.
+- Kontras dan exposure scene diatur agar objek 3D lebih hidup.
+- Material papan dan petak diubah ke gaya PBR metallic-roughness agar pantulan dan kekasaran lebih natural.
+- Ular dibuat lebih realistis secara procedural: tubuh berombak, kepala, mata, lidah bercabang, dan belly strip.
+- Tangga dibuat lebih realistis secara procedural: dua rail samping dan beberapa anak tangga dengan material kayu.
+- Bonus tile dan final tile memiliki emissive yang lebih kuat agar lebih mudah dibedakan.
