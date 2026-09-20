@@ -82,7 +82,7 @@ export class MaterialFactory {
     if (special === 'bonus') emissive = new pc.Color(0.12, 0.09, 0.012);
     if (special === 'final') {
       color.set(0.96, 0.24, 0.33);
-      emissive = new pc.Color(0.14, 0.02, 0.035);
+      emissive = new pc.Color(0.48, 0.18, 0.03);
     }
     return material(`tile-${competency}-${special}`, color, 0.08, 0.68, emissive);
   }

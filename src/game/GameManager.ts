@@ -1,10 +1,11 @@
+import * as pc from 'playcanvas';
 import { Player } from './Player';
 import { TurnManager } from './TurnManager';
 import type { TileEvent } from './TileEvent';
 import { GameScene } from '../scene/GameScene';
 import { CameraController } from '../scene/CameraController';
 import { QuestionEngine } from '../questions/QuestionEngine';
-import { sparkleBurst } from '../effects/ParticleEffects';
+import { climbShimmer, landingPulse, sparkleBurst } from '../effects/ParticleEffects';
 
 interface UIRefs {
   rollButton: HTMLButtonElement;
@@ -79,9 +80,20 @@ export class GameManager {
     this.camera.focus(this.gameScene.board.tilePosition(target), 12.8);
     this.addLog(`${player.name}: ${player.position} → ${target} (dadu ${value}).`);
     for (let tile = player.position + 1; tile <= target; tile++) {
-      await player.moveTo(tile, this.gameScene.board, 285, (position) => this.camera.focus(position, 12.8, 0.35));
+      const beforeY = player.root?.getPosition().y ?? 0;
+      await player.moveTo(tile, this.gameScene.board, 300, (position, progress, heightProgress) => this.camera.trackClimb(position, tile, progress, heightProgress));
+      const landed = this.gameScene.board.tilePosition(tile);
+      const climbHeight = Math.max(0.35, landed.y - beforeY + 0.28);
+      void landingPulse(this.gameScene.app, landed);
+      void climbShimmer(this.gameScene.app, landed, climbHeight);
       this.playSound('/sounds/move.wav', 0.18);
       this.renderHUD();
+    }
+
+    if (target === 50) {
+      await this.camera.finalApproach(this.gameScene.board.tilePosition(50));
+    } else {
+      this.camera.releaseCinematic();
     }
 
     const competency = this.gameScene.board.competencyFor(target);
@@ -107,7 +119,7 @@ export class GameManager {
       if (fullCorrect && event.to) {
         this.addLog(`${player.name} menjawab benar dan naik tangga ke ${event.to}.`);
         this.camera.focus(this.gameScene.board.tilePosition(event.to), 12.0);
-        await player.moveTo(event.to, this.gameScene.board, 720, (p) => this.camera.focus(p, 12.0, 0.25));
+        await player.moveTo(event.to, this.gameScene.board, 760, (p, progress, heightProgress) => this.camera.trackClimb(p, event.to!, progress, heightProgress));
         void sparkleBurst(this.gameScene.app, this.gameScene.board.tilePosition(event.to));
       } else this.addLog(`${player.name} belum berhasil naik tangga.`);
     } else if (event.kind === 'snake') {
@@ -122,7 +134,7 @@ export class GameManager {
       if (fullCorrect) void sparkleBurst(this.gameScene.app, this.gameScene.board.tilePosition(player.position));
     } else if (event.kind === 'final') {
       if (fullCorrect) {
-        this.showWinner(this.turns.current);
+        await this.showWinner(this.turns.current);
         return;
       }
       this.addLog(`${player.name} belum lolos Final Challenge dan kembali ke petak 49.`);
@@ -142,13 +154,14 @@ export class GameManager {
     this.renderHUD();
   }
 
-  private showWinner(index: number) {
+  private async showWinner(index: number) {
     const winner = this.players[index];
     const other = this.players[index === 0 ? 1 : 0];
     this.started = false;
     this.busy = true;
-    this.camera.focus(this.gameScene.board.tilePosition(50), 11.4);
-    void sparkleBurst(this.gameScene.app, this.gameScene.board.tilePosition(50));
+    const finalPos = this.gameScene.board.tilePosition(50);
+    void sparkleBurst(this.gameScene.app, finalPos, new pc.Color(1.0, 0.72, 0.12));
+    await this.camera.finalVictoryOrbit(finalPos);
     this.ui.winCard.innerHTML = `<div class="trophy">🏆</div><span class="eyebrow">Pertandingan selesai</span><h2>${this.escape(winner.name)} Menang!</h2><p>${this.escape(winner.name)} mencapai petak 50 dan menuntaskan Final Challenge.</p><div class="win-stats"><div><b>${this.escape(winner.name)}</b><br>Skor ${winner.score}<br>Akurasi ${winner.accuracy}</div><div><b>${this.escape(other.name)}</b><br>Skor ${other.score}<br>Akurasi ${other.accuracy}</div></div><button id="reload-game" class="primary">Main Lagi</button>`;
     this.ui.winOverlay.classList.remove('hidden');
     this.ui.winCard.querySelector<HTMLButtonElement>('#reload-game')?.addEventListener('click', () => location.reload());

@@ -21,6 +21,7 @@ export class CameraController {
   private dragging = false;
   private lastX = 0;
   private lastY = 0;
+  private cinematicLock = false;
 
   private readonly presets: CameraPreset[] = [
     { yaw: -18, pitch: 42, radius: 22.5, target: new pc.Vec3(0, 1.65, 0.0) },
@@ -44,6 +45,7 @@ export class CameraController {
   }
 
   togglePreset() {
+    if (this.cinematicLock) return;
     this.current = (this.current + 1) % this.presets.length;
     const p = this.presets[this.current];
     this.desiredYaw = p.yaw;
@@ -59,7 +61,49 @@ export class CameraController {
     this.desiredPitch = Math.min(this.desiredPitch, 43);
   }
 
+  trackClimb(world: pc.Vec3, tile: number, progress: number, heightProgress: number) {
+    this.cinematicLock = true;
+    const level = pc.math.clamp((tile - 1) / 49, 0, 1);
+    const sideSweep = Math.sin(progress * Math.PI) * (tile % 2 === 0 ? 1 : -1);
+    this.desiredTarget.set(world.x, world.y + 0.36 + level * 0.35, world.z);
+    this.desiredRadius = pc.math.lerp(14.4, 11.8, level) - Math.sin(progress * Math.PI) * 0.75;
+    this.desiredPitch = pc.math.lerp(43, 35, level) - heightProgress * 2.2;
+    this.desiredYaw = pc.math.lerp(this.desiredYaw, -16 + sideSweep * 8 + level * 7, 0.08);
+  }
+
+  async finalApproach(world: pc.Vec3) {
+    this.cinematicLock = true;
+    this.desiredTarget.copy(world);
+    this.desiredTarget.y += 0.48;
+    this.desiredRadius = 10.2;
+    this.desiredPitch = 31;
+    this.desiredYaw = 24;
+    await this.wait(720);
+
+    this.desiredRadius = 8.9;
+    this.desiredPitch = 27;
+    this.desiredYaw = -26;
+    await this.wait(820);
+  }
+
+  async finalVictoryOrbit(world: pc.Vec3) {
+    this.cinematicLock = true;
+    this.desiredTarget.copy(world);
+    this.desiredTarget.y += 0.62;
+    this.desiredRadius = 9.2;
+    this.desiredPitch = 30;
+    for (const yaw of [18, 62, 108]) {
+      this.desiredYaw = yaw;
+      await this.wait(520);
+    }
+  }
+
+  releaseCinematic() {
+    this.cinematicLock = false;
+  }
+
   restoreOverview() {
+    this.cinematicLock = false;
     const p = this.presets[this.current];
     this.desiredTarget.copy(p.target);
     this.desiredRadius = p.radius;
@@ -69,6 +113,7 @@ export class CameraController {
 
   private bindInput() {
     this.canvas.addEventListener('pointerdown', (e) => {
+      if (this.cinematicLock) return;
       this.dragging = true;
       this.lastX = e.clientX;
       this.lastY = e.clientY;
@@ -79,7 +124,7 @@ export class CameraController {
       if (this.canvas.hasPointerCapture(e.pointerId)) this.canvas.releasePointerCapture(e.pointerId);
     });
     this.canvas.addEventListener('pointermove', (e) => {
-      if (!this.dragging) return;
+      if (!this.dragging || this.cinematicLock) return;
       const dx = e.clientX - this.lastX;
       const dy = e.clientY - this.lastY;
       this.lastX = e.clientX;
@@ -88,6 +133,7 @@ export class CameraController {
       this.desiredPitch = pc.math.clamp(this.desiredPitch - dy * 0.20, 25, 76);
     });
     this.canvas.addEventListener('wheel', (e) => {
+      if (this.cinematicLock) return;
       e.preventDefault();
       this.desiredRadius = pc.math.clamp(this.desiredRadius + e.deltaY * 0.012, 12.5, 28);
     }, { passive: false });
@@ -126,5 +172,9 @@ export class CameraController {
   private lerpAngle(a: number, b: number, t: number) {
     const delta = ((b - a + 180) % 360 + 360) % 360 - 180;
     return a + delta * t;
+  }
+
+  private wait(ms: number) {
+    return new Promise<void>((resolve) => setTimeout(resolve, ms));
   }
 }

@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**PlayCanvas Engine + Vite + TypeScript — v3.1.0**
+**PlayCanvas Engine + Vite + TypeScript — v3.2.0**
 
 Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ulang menggunakan PlayCanvas Engine standalone, sedangkan logika permainan dan bank soal 50 butir tetap dipertahankan.
 
@@ -92,6 +92,7 @@ src/
 ├── effects/
 │   ├── Animations.ts
 │   ├── ParticleEffects.ts
+│   ├── FinalTileEffects.ts
 │   └── PostProcessing.ts
 ├── ui/
 │   ├── HUD.ts
@@ -116,5 +117,33 @@ GLB tidak dibutuhkan untuk versi ini. `public/models/` tetap tersedia bila nanti
 - Bank soal: 50/50 tervalidasi.
 - Setiap kompetensi: 10 soal.
 - Tipe keseluruhan: 20 PG, 10 B/S, 10 matching, 10 multi-select.
-- TypeScript proyek diperiksa menggunakan stub API lokal untuk menangkap kesalahan sintaks/type internal karena registry npm tidak dapat diakses dari container pembuatan paket.
+- Seluruh 28 file TypeScript ditranspilasi untuk validasi sintaks tanpa error.
+- API PlayCanvas yang dipakai untuk primitive `torus`, material blending/depth, dan light range/intensity dicek terhadap referensi Engine API 2.22.x.
+- `npm install` penuh tidak selesai di container pembuatan karena akses registry mengalami timeout, sehingga build produksi tetap perlu dijalankan sekali di mesin lokal/Vercel.
 - Versi dependency dikunci di `package.json`: PlayCanvas 2.22.2, Vite 8.3.0, TypeScript 5.8.3, MediaPipe Tasks Vision 1.0.1.
+
+
+## Peningkatan sinematik v3.2.0
+
+### Transisi naik level
+- Pion menggunakan arc movement yang lebih tinggi saat selisih elevasi lebih besar.
+- Ditambahkan squash-and-stretch saat melompat dan landing bounce saat menyentuh ubin.
+- Orientasi pion mengikuti arah gerak agar perpindahan terasa seperti gerakan 3D, bukan teleportasi.
+- Setiap pendaratan memunculkan pulse ring bercahaya dan shimmer vertikal singkat.
+- Durasi gerak otomatis sedikit lebih panjang untuk lompatan elevasi besar seperti naik tangga.
+
+### Petak 50 / Final Summit
+- Petak 50 memiliki emissive yang paling kuat.
+- Ditambahkan tiga halo emas beranimasi.
+- Ditambahkan beacon cahaya vertikal transparan.
+- Ditambahkan crown glow yang berputar di atas puncak.
+- Omni light emas berdenyut secara real-time untuk memberi efek puncak/final.
+
+### Kamera mendaki
+- Kamera mengikuti posisi pion selama perpindahan antarpetak.
+- Target kamera otomatis naik mengikuti elevasi papan.
+- Radius kamera mengecil secara progresif saat mencapai petak yang lebih tinggi.
+- Pitch dan yaw berubah halus selama lompatan agar kesan mendaki lebih terasa.
+- Petak 50 memiliki final approach khusus sebelum pertanyaan Final Challenge.
+- Jika Final Challenge benar, kamera melakukan victory orbit sebelum menampilkan layar kemenangan.
+- Input orbit pengguna dikunci sementara selama shot sinematik supaya framing tidak rusak.

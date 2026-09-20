@@ -7,6 +7,7 @@ import { LadderFactory } from './LadderFactory';
 import { MaterialFactory, type PawnMaterialStyle } from './MaterialFactory';
 import { PawnFactory, type PawnVisual } from './PawnFactory';
 import { SnakeFactory } from './SnakeFactory';
+import { FinalTileEffects } from '../effects/FinalTileEffects';
 
 export class GameScene {
   readonly board = new Board();
@@ -36,6 +37,7 @@ export class GameScene {
     app.root.addChild(red.root);
     this.pawns = [blue, red];
     this.dice = new Dice(app, this.materials);
+    new FinalTileEffects(app, this.board.tilePosition(50));
 
   }
 
