@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**PlayCanvas Engine + Vite + TypeScript — v3.2.0**
+**PlayCanvas Engine + Vite + TypeScript — v3.2.1**
 
 Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ulang menggunakan PlayCanvas Engine standalone, sedangkan logika permainan dan bank soal 50 butir tetap dipertahankan.
 
@@ -123,7 +123,7 @@ GLB tidak dibutuhkan untuk versi ini. `public/models/` tetap tersedia bila nanti
 - Versi dependency dikunci di `package.json`: PlayCanvas 2.22.2, Vite 8.3.0, TypeScript 5.8.3, MediaPipe Tasks Vision 1.0.1.
 
 
-## Peningkatan sinematik v3.2.0
+## Peningkatan sinematik v3.2.1
 
 ### Transisi naik level
 - Pion menggunakan arc movement yang lebih tinggi saat selisih elevasi lebih besar.
@@ -147,3 +147,8 @@ GLB tidak dibutuhkan untuk versi ini. `public/models/` tetap tersedia bila nanti
 - Petak 50 memiliki final approach khusus sebelum pertanyaan Final Challenge.
 - Jika Final Challenge benar, kamera melakukan victory orbit sebelum menampilkan layar kemenangan.
 - Input orbit pengguna dikunci sementara selama shot sinematik supaya framing tidak rusak.
+
+## Penyesuaian v3.2.1
+- Arah kamera overview diubah agar melihat papan **dari angka rendah ke angka tinggi**, sehingga rasa perjalanan naik ke puncak lebih kuat.
+- Scene dibuat **lebih cerah** melalui peningkatan exposure, ambient light, key light, fill light, dan summit glow.
+- Clear color kamera juga dibuat sedikit lebih terang agar keseluruhan scene terasa lebih hidup.

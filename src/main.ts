@@ -27,7 +27,7 @@ async function bootstrap() {
   });
   app.setCanvasFillMode(pc.FILLMODE_NONE, canvas.clientWidth, canvas.clientHeight);
   app.setCanvasResolution(pc.RESOLUTION_AUTO);
-  app.scene.exposure = 1.12;
+  app.scene.exposure = 1.22;
 
   const resize = () => {
     const w = Math.max(320, Math.floor(canvas.clientWidth));

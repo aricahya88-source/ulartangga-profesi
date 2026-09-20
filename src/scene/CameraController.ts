@@ -10,10 +10,10 @@ interface CameraPreset {
 export class CameraController {
   readonly entity: pc.Entity;
   private current = 0;
-  private yaw = -18;
-  private pitch = 42;
-  private radius = 22.5;
-  private target = new pc.Vec3(0, 1.65, 0);
+  private yaw = 176;
+  private pitch = 38;
+  private radius = 24.4;
+  private target = new pc.Vec3(0, 1.85, 0.9);
   private desiredYaw = this.yaw;
   private desiredPitch = this.pitch;
   private desiredRadius = this.radius;
@@ -24,17 +24,21 @@ export class CameraController {
   private cinematicLock = false;
 
   private readonly presets: CameraPreset[] = [
-    { yaw: -18, pitch: 42, radius: 22.5, target: new pc.Vec3(0, 1.65, 0.0) },
-    { yaw: 32, pitch: 34, radius: 19.8, target: new pc.Vec3(1.2, 1.90, -0.15) },
-    { yaw: -58, pitch: 48, radius: 21.6, target: new pc.Vec3(-1.0, 1.55, 0.35) },
-    { yaw: 0, pitch: 73, radius: 23.8, target: new pc.Vec3(0, 1.55, 0) }
+    // Sudut utama: dari arah angka rendah menuju angka tinggi
+    { yaw: 176, pitch: 38, radius: 24.4, target: new pc.Vec3(0, 1.85, 0.9) },
+    // Sudut sinematik kanan, masih menatap arah kenaikan ubin
+    { yaw: 154, pitch: 33, radius: 21.6, target: new pc.Vec3(1.15, 2.05, 0.7) },
+    // Sudut sinematik kiri, juga dari bawah ke puncak
+    { yaw: -154, pitch: 44, radius: 22.8, target: new pc.Vec3(-1.0, 1.85, 0.75) },
+    // Top-oblique agar susunan bertingkat tetap terbaca
+    { yaw: 180, pitch: 68, radius: 24.6, target: new pc.Vec3(0, 1.75, 0.45) }
   ];
 
   constructor(private readonly app: pc.Application, private readonly canvas: HTMLCanvasElement) {
     this.entity = new pc.Entity('Cinematic Camera');
     this.entity.addComponent('camera', {
-      clearColor: new pc.Color(0.018, 0.032, 0.052),
-      fov: 45,
+      clearColor: new pc.Color(0.08, 0.11, 0.16),
+      fov: 46,
       nearClip: 0.1,
       farClip: 100
     });
@@ -58,43 +62,48 @@ export class CameraController {
     this.desiredTarget.lerp(this.desiredTarget, world, Math.min(1, 0.88 * durationBias));
     this.desiredTarget.y = Math.max(this.desiredTarget.y, world.y + 0.28);
     this.desiredRadius = radius;
-    this.desiredPitch = Math.min(this.desiredPitch, 43);
+    this.desiredPitch = Math.min(this.desiredPitch, 40);
   }
 
   trackClimb(world: pc.Vec3, tile: number, progress: number, heightProgress: number) {
     this.cinematicLock = true;
     const level = pc.math.clamp((tile - 1) / 49, 0, 1);
     const sideSweep = Math.sin(progress * Math.PI) * (tile % 2 === 0 ? 1 : -1);
-    this.desiredTarget.set(world.x, world.y + 0.36 + level * 0.35, world.z);
-    this.desiredRadius = pc.math.lerp(14.4, 11.8, level) - Math.sin(progress * Math.PI) * 0.75;
-    this.desiredPitch = pc.math.lerp(43, 35, level) - heightProgress * 2.2;
-    this.desiredYaw = pc.math.lerp(this.desiredYaw, -16 + sideSweep * 8 + level * 7, 0.08);
+    this.desiredTarget.set(world.x, world.y + 0.38 + level * 0.38, world.z + 0.06);
+    this.desiredRadius = pc.math.lerp(15.4, 12.0, level) - Math.sin(progress * Math.PI) * 0.8;
+    this.desiredPitch = pc.math.lerp(41, 31, level) - heightProgress * 2.6;
+    // Tetap dominan dari belakang/arah petak rendah ke petak tinggi
+    const baseYaw = 176 - level * 12;
+    this.desiredYaw = this.lerpAngle(this.desiredYaw, baseYaw + sideSweep * 7, 0.10);
   }
 
   async finalApproach(world: pc.Vec3) {
     this.cinematicLock = true;
     this.desiredTarget.copy(world);
-    this.desiredTarget.y += 0.48;
-    this.desiredRadius = 10.2;
-    this.desiredPitch = 31;
-    this.desiredYaw = 24;
-    await this.wait(720);
+    this.desiredTarget.y += 0.52;
+    this.desiredTarget.z += 0.10;
+    // Pendekatan dari bawah ke puncak
+    this.desiredRadius = 11.0;
+    this.desiredPitch = 29;
+    this.desiredYaw = 174;
+    await this.wait(760);
 
-    this.desiredRadius = 8.9;
-    this.desiredPitch = 27;
-    this.desiredYaw = -26;
+    this.desiredRadius = 9.4;
+    this.desiredPitch = 26;
+    this.desiredYaw = 154;
     await this.wait(820);
   }
 
   async finalVictoryOrbit(world: pc.Vec3) {
     this.cinematicLock = true;
     this.desiredTarget.copy(world);
-    this.desiredTarget.y += 0.62;
-    this.desiredRadius = 9.2;
-    this.desiredPitch = 30;
-    for (const yaw of [18, 62, 108]) {
+    this.desiredTarget.y += 0.66;
+    this.desiredTarget.z += 0.08;
+    this.desiredRadius = 9.4;
+    this.desiredPitch = 28;
+    for (const yaw of [168, 138, 112]) {
       this.desiredYaw = yaw;
-      await this.wait(520);
+      await this.wait(560);
     }
   }
 
