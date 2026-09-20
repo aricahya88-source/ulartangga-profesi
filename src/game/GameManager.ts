@@ -6,6 +6,7 @@ import { GameScene } from '../scene/GameScene';
 import { CameraController } from '../scene/CameraController';
 import { QuestionEngine } from '../questions/QuestionEngine';
 import { climbShimmer, landingPulse, sparkleBurst } from '../effects/ParticleEffects';
+import { bonusCelebrationEffect, ladderSuccessEffect, snakeEscapeEffect, snakePenaltyEffect } from '../effects/EventEffects';
 
 interface UIRefs {
   rollButton: HTMLButtonElement;
@@ -100,7 +101,7 @@ export class GameManager {
     const event = this.gameScene.board.eventFor(target);
     const question = this.questionEngine.draw(competency);
     this.renderHUD();
-    const outcome = await this.questionEngine.ask(question, this.eventLabel(event));
+    const outcome = await this.questionEngine.ask(question, this.eventLabel(event), { playerName: player.name, tile: target });
 
     player.answered += 1;
     if (outcome.fullCorrect) player.correct += 1;
@@ -118,20 +119,28 @@ export class GameManager {
     if (event.kind === 'ladder') {
       if (fullCorrect && event.to) {
         this.addLog(`${player.name} menjawab benar dan naik tangga ke ${event.to}.`);
+        const from = this.gameScene.board.tilePosition(player.position);
+        this.camera.focus(from, 11.6);
+        await ladderSuccessEffect(this.gameScene.app, from);
         this.camera.focus(this.gameScene.board.tilePosition(event.to), 12.0);
         await player.moveTo(event.to, this.gameScene.board, 760, (p, progress, heightProgress) => this.camera.trackClimb(p, event.to!, progress, heightProgress));
         void sparkleBurst(this.gameScene.app, this.gameScene.board.tilePosition(event.to));
       } else this.addLog(`${player.name} belum berhasil naik tangga.`);
     } else if (event.kind === 'snake') {
-      if (fullCorrect) this.addLog(`${player.name} menjawab benar dan selamat dari ular.`);
-      else if (event.to) {
+      if (fullCorrect) {
+        this.addLog(`${player.name} menjawab benar dan selamat dari ular.`);
+        await snakeEscapeEffect(this.gameScene.app, this.gameScene.board.tilePosition(player.position));
+      } else if (event.to) {
         this.addLog(`${player.name} turun karena ular ke petak ${event.to}.`);
+        const from = this.gameScene.board.tilePosition(player.position);
+        this.camera.focus(from, 10.9);
+        await snakePenaltyEffect(this.gameScene.app, from);
         this.camera.focus(this.gameScene.board.tilePosition(event.to), 11.7);
         await player.moveTo(event.to, this.gameScene.board, 820, (p) => this.camera.focus(p, 11.7, 0.25));
       }
     } else if (event.kind === 'bonus') {
       this.addLog(fullCorrect ? `${player.name} mendapat bonus +50 poin.` : `${player.name} belum memperoleh bonus.`);
-      if (fullCorrect) void sparkleBurst(this.gameScene.app, this.gameScene.board.tilePosition(player.position));
+      if (fullCorrect) await bonusCelebrationEffect(this.gameScene.app, this.gameScene.board.tilePosition(player.position));
     } else if (event.kind === 'final') {
       if (fullCorrect) {
         await this.showWinner(this.turns.current);

@@ -10,8 +10,18 @@ const FACE_PIPS: Record<number, Array<[number, number]>> = {
   6: [[-1, 1], [1, 1], [-1, 0], [1, 0], [-1, -1], [1, -1]]
 };
 
+const FINAL_ROTATIONS: Record<number, pc.Vec3> = {
+  1: new pc.Vec3(0, 0, 0),
+  2: new pc.Vec3(90, 0, 0),
+  3: new pc.Vec3(0, 0, -90),
+  4: new pc.Vec3(0, 0, 90),
+  5: new pc.Vec3(-90, 0, 0),
+  6: new pc.Vec3(180, 0, 0)
+};
+
 export class Dice {
   readonly root = new pc.Entity('3D Dice');
+  private readonly baseScale = 1;
 
   constructor(private readonly app: pc.Application, private readonly materials: MaterialFactory) {
     const cube = new pc.Entity('Dice Body');
@@ -30,38 +40,103 @@ export class Dice {
 
   async roll(): Promise<number> {
     const value = 1 + Math.floor(Math.random() * 6);
+    const start = this.root.getPosition().clone();
     const startEuler = this.root.getEulerAngles().clone();
+    const finalBase = FINAL_ROTATIONS[value];
     const targetEuler = new pc.Vec3(
-      startEuler.x + 720 + Math.random() * 300,
-      startEuler.y + 900 + Math.random() * 300,
-      startEuler.z + 540 + Math.random() * 240
+      finalBase.x + 720 + Math.floor(Math.random() * 2) * 360,
+      finalBase.y + 900 + Math.floor(Math.random() * 2) * 360,
+      finalBase.z + 720 + Math.floor(Math.random() * 2) * 360
     );
-    const startY = this.root.getPosition().y;
+
+    const sideKick = new pc.Vec3((Math.random() - 0.5) * 0.62, 0, (Math.random() - 0.5) * 0.42);
     const startTime = performance.now();
-    const duration = 760;
+    const duration = 1180;
 
     await new Promise<void>((resolve) => {
       const tick = (now: number) => {
         const t = Math.min(1, (now - startTime) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
+
         const rx = pc.math.lerp(startEuler.x, targetEuler.x, eased);
         const ry = pc.math.lerp(startEuler.y, targetEuler.y, eased);
         const rz = pc.math.lerp(startEuler.z, targetEuler.z, eased);
         this.root.setEulerAngles(rx, ry, rz);
-        const pos = this.root.getPosition().clone();
-        pos.y = startY + Math.sin(Math.PI * t) * 1.05;
-        this.root.setPosition(pos);
+
+        // Tiga bounce yang makin kecil untuk rasa dadu fisik.
+        const bounceEnvelope = Math.max(0, 1 - t);
+        const bounce = Math.abs(Math.sin(t * Math.PI * 3.0)) * bounceEnvelope * 1.45;
+        const drift = Math.sin(t * Math.PI) * (1 - t * 0.35);
+        this.root.setPosition(
+          start.x + sideKick.x * drift,
+          start.y + bounce,
+          start.z + sideKick.z * drift
+        );
+
+        // Squash/stretch ringan saat impact.
+        const impactWave = Math.abs(Math.cos(t * Math.PI * 3.0));
+        const squash = t > 0.18 ? impactWave * (1 - t) * 0.10 : 0;
+        this.root.setLocalScale(
+          this.baseScale + squash,
+          this.baseScale - squash * 0.65,
+          this.baseScale + squash
+        );
+
         if (t < 1) requestAnimationFrame(tick);
         else {
-          const pos2 = this.root.getPosition().clone();
-          pos2.y = startY;
-          this.root.setPosition(pos2);
+          this.root.setPosition(start);
+          this.root.setLocalScale(this.baseScale, this.baseScale, this.baseScale);
+          this.root.setEulerAngles(finalBase.x, finalBase.y, finalBase.z);
           resolve();
         }
       };
       requestAnimationFrame(tick);
     });
+
+    await this.impactPulse(start);
     return value;
+  }
+
+  private async impactPulse(world: pc.Vec3) {
+    const mat = new pc.StandardMaterial();
+    mat.name = 'dice-impact-ring';
+    mat.diffuse.set(0, 0, 0);
+    mat.emissive.set(0.32, 0.78, 1.0);
+    mat.emissiveIntensity = 2.8;
+    mat.opacity = 0.78;
+    mat.blendType = pc.BLEND_ADDITIVE;
+    mat.depthWrite = false;
+    mat.update();
+
+    const ring = new pc.Entity('Dice Impact Ring');
+    ring.addComponent('render', { type: 'torus' });
+    if (ring.render) {
+      ring.render.material = mat;
+      ring.render.castShadows = false;
+      ring.render.receiveShadows = false;
+    }
+    ring.setEulerAngles(90, 0, 0);
+    ring.setPosition(world.x, Math.max(0.08, world.y - 0.48), world.z);
+    ring.setLocalScale(0.22, 0.22, 0.03);
+    this.app.root.addChild(ring);
+
+    const started = performance.now();
+    const duration = 300;
+    await new Promise<void>((resolve) => {
+      const tick = (now: number) => {
+        const t = Math.min(1, (now - started) / duration);
+        const s = pc.math.lerp(0.22, 1.25, 1 - Math.pow(1 - t, 3));
+        ring.setLocalScale(s, s, 0.03);
+        mat.opacity = 0.78 * (1 - t);
+        mat.update();
+        if (t < 1) requestAnimationFrame(tick);
+        else {
+          ring.destroy();
+          resolve();
+        }
+      };
+      requestAnimationFrame(tick);
+    });
   }
 
   private addPips() {

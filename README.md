@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**PlayCanvas Engine + Vite + TypeScript — v3.2.1**
+**PlayCanvas Engine + Vite + TypeScript — v3.3.0**
 
 Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ulang menggunakan PlayCanvas Engine standalone, sedangkan logika permainan dan bank soal 50 butir tetap dipertahankan.
 
@@ -123,7 +123,7 @@ GLB tidak dibutuhkan untuk versi ini. `public/models/` tetap tersedia bila nanti
 - Versi dependency dikunci di `package.json`: PlayCanvas 2.22.2, Vite 8.3.0, TypeScript 5.8.3, MediaPipe Tasks Vision 1.0.1.
 
 
-## Peningkatan sinematik v3.2.1
+## Peningkatan sinematik v3.3.0
 
 ### Transisi naik level
 - Pion menggunakan arc movement yang lebih tinggi saat selisih elevasi lebih besar.
@@ -148,7 +148,17 @@ GLB tidak dibutuhkan untuk versi ini. `public/models/` tetap tersedia bila nanti
 - Jika Final Challenge benar, kamera melakukan victory orbit sebelum menampilkan layar kemenangan.
 - Input orbit pengguna dikunci sementara selama shot sinematik supaya framing tidak rusak.
 
-## Penyesuaian v3.2.1
+## Penyesuaian v3.3.0
 - Arah kamera overview diubah agar melihat papan **dari angka rendah ke angka tinggi**, sehingga rasa perjalanan naik ke puncak lebih kuat.
 - Scene dibuat **lebih cerah** melalui peningkatan exposure, ambient light, key light, fill light, dan summit glow.
 - Clear color kamera juga dibuat sedikit lebih terang agar keseluruhan scene terasa lebih hidup.
+
+## Upgrade v3.3.0
+- UI soal didesain ulang menjadi panel modern dengan event emblem, nama pemain, nomor petak, zona, jenis soal, dan progress bank soal per zona.
+- Stimulus, tantangan, opsi jawaban, kunci jawaban, dan pembahasan memiliki hierarchy visual yang lebih jelas.
+- Dadu 3D memakai tiga bounce yang mengecil, drift ringan, squash/stretch saat impact, final orientation yang sesuai hasil angka, serta impact ring.
+- Event tangga: flash emas, rising rings, sparkle, dan camera focus.
+- Event ular salah: warning flash merah, warning rings, temporary red omni light, lalu animasi turun.
+- Event ular berhasil dihindari: escape flash hijau dan sparkle.
+- Bonus tile: flash biru, rising rings, dan sparkle.
+- Seluruh fitur v3.2.1 tetap dipertahankan: kamera dari angka rendah ke tinggi, scene lebih cerah, papan bertingkat, final summit FX, material pion, dan favicon.
