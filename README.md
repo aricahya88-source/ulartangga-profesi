@@ -1,5 +1,7 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
+**Versi 2.0.1**
+
 Website statis 1 vs 1 berbasis **Vite + TypeScript + Babylon.js** dengan bank soal literasi 50 butir.
 
 ## Teknologi
@@ -61,3 +63,8 @@ Dengan demikian tidak ada ketergantungan lisensi model eksternal.
 - 10 Integratif
 
 Komposisi tipe soal: 20 pilihan ganda, 10 benar/salah, 10 menjodohkan, dan 10 jawaban lebih dari satu.
+
+
+## Perbaikan v2.0.1
+- Memperbaiki error build TypeScript pada `BoardScene.ts`: `ICanvasRenderingContext` tidak memiliki properti `textAlign`.
+- Label petak sekarang dipusatkan menggunakan `measureText()` sehingga kompatibel dengan tipe konteks Babylon.js.

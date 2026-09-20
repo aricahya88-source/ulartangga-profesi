@@ -94,12 +94,14 @@ export class BoardScene {
     ctx.fillStyle = 'rgba(0,0,0,0.10)';
     ctx.fillRect(0, 0, 512, 512);
     ctx.fillStyle = '#ffffff';
-    ctx.textAlign = 'center';
     ctx.font = 'bold 150px Arial';
-    ctx.fillText(String(tile), 256, 285);
+    const tileText = String(tile);
+    const tileTextWidth = ctx.measureText(tileText).width;
+    ctx.fillText(tileText, 256 - tileTextWidth / 2, 285);
     ctx.font = 'bold 48px Arial';
     const marker = tile === 50 ? 'FINAL' : BONUS_TILES.has(tile) ? 'BONUS' : (LADDERS.has(tile) ? 'TANGGA' : SNAKES.has(tile) ? 'ULAR' : competency.toUpperCase().slice(0, 3));
-    ctx.fillText(marker, 256, 390);
+    const markerWidth = ctx.measureText(marker).width;
+    ctx.fillText(marker, 256 - markerWidth / 2, 390);
     texture.update();
 
     const mat = new StandardMaterial(`labelMat-${tile}`, this.scene);
