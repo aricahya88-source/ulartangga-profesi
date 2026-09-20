@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**Versi 2.1.0**
+**Versi 2.2.0**
 
 Website statis 1 vs 1 berbasis **Vite + TypeScript + Babylon.js** dengan bank soal literasi 50 butir.
 
@@ -77,3 +77,12 @@ Komposisi tipe soal: 20 pilihan ganda, 10 benar/salah, 10 menjodohkan, dan 10 ja
 - Ular dibuat lebih realistis secara procedural: tubuh berombak, kepala, mata, lidah bercabang, dan belly strip.
 - Tangga dibuat lebih realistis secara procedural: dua rail samping dan beberapa anak tangga dengan material kayu.
 - Bonus tile dan final tile memiliki emissive yang lebih kuat agar lebih mudah dibedakan.
+
+
+## Peningkatan visual v2.2.0
+- Pion diganti menjadi pion berdiri procedural dengan material PBR berwarna dan aksen yang lebih jelas.
+- Angka 1–50 pada seluruh petak dibuat lebih besar, lebih terang, dan selalu tampak di atas papan.
+- Animasi ular dibuat lebih halus dengan gerakan sway ringan real-time.
+- Material papan dibuat lebih mewah dengan kombinasi bingkai kayu gelap, base metal, dan area felt.
+- Kamera dibuat lebih sinematik dengan tiga preset sudut pandang yang berpindah secara halus.
+- Gerakan pion dibuat lebih mulus dengan easing dan lintasan melengkung.

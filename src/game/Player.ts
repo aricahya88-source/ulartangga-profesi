@@ -1,4 +1,4 @@
-import { Animation, Scene, TransformNode, Vector3 } from '@babylonjs/core';
+import { Animation, CubicEase, EasingFunction, Scene, TransformNode, Vector3 } from '@babylonjs/core';
 import type { Board } from './Board';
 
 export class Player {
@@ -33,15 +33,25 @@ export class Player {
     return copy;
   }
 
-  async moveTo(tile: number, board: Board, scene: Scene, duration = 240): Promise<void> {
+  async moveTo(tile: number, board: Board, scene: Scene, duration = 260): Promise<void> {
     this.position = tile;
     if (!this.root) return;
     const from = this.root.position.clone();
     const to = this.offsetPosition(board.tilePosition(tile));
+    const mid = Vector3.Lerp(from, to, 0.5).add(new Vector3(0, Math.max(0.26, from.subtract(to).length() * 0.10), 0));
+
+    const ease = new CubicEase();
+    ease.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
+
     const anim = new Animation(`playerMove${this.index}`, 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CONSTANT);
-    anim.setKeys([{ frame: 0, value: from }, { frame: 12, value: to.add(new Vector3(0, 0.28, 0)) }, { frame: 24, value: to }]);
+    anim.setEasingFunction(ease);
+    anim.setKeys([
+      { frame: 0, value: from },
+      { frame: 16, value: mid },
+      { frame: 32, value: to }
+    ]);
     await new Promise<void>((resolve) => {
-      scene.beginDirectAnimation(this.root!, [anim], 0, 24, false, 1000 / duration, resolve);
+      scene.beginDirectAnimation(this.root!, [anim], 0, 32, false, 1000 / duration, resolve);
     });
   }
 }
