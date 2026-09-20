@@ -33,7 +33,7 @@ export class TileNumberOverlay {
 
     for (let tile = 1; tile <= 50; tile++) {
       const world = this.board.tilePosition(tile).clone();
-      world.y = 0.82;
+      world.y += 0.10;
       const screen = camera.worldToScreen(world, this.scratch);
       const x = screen.x * sx;
       const y = screen.y * sy;

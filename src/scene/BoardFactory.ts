@@ -42,18 +42,34 @@ export class BoardFactory {
     primitive('Felt Surface', 'box', this.materials.felt, new pc.Vec3(0, -0.05, 0), new pc.Vec3(16.12, 0.08, 8.12), this.root);
 
     const tileMaterials = new Map<string, pc.StandardMaterial>();
+    const pedestalBaseY = -0.01;
     for (let tile = 1; tile <= 50; tile++) {
       const competency = this.board.competencyFor(tile);
       const special = tile === 50 ? 'final' : BONUS_TILES.has(tile) ? 'bonus' : 'normal';
       const key = `${competency}-${special}`;
       if (!tileMaterials.has(key)) tileMaterials.set(key, this.materials.tile(competency, special));
       const pos = this.board.tilePosition(tile);
+      const tileCenterY = pos.y - this.board.tileHeight / 2;
+
+      const pedestalTopY = tileCenterY - this.board.tileHeight / 2;
+      const pedestalHeight = pedestalTopY - pedestalBaseY;
+      if (pedestalHeight > 0.025) {
+        primitive(
+          `Pedestal ${tile}`,
+          'box',
+          this.materials.boardMetal,
+          new pc.Vec3(pos.x, pedestalBaseY + pedestalHeight / 2, pos.z),
+          new pc.Vec3(this.board.tileSize * 0.34, pedestalHeight, this.board.tileSize * 0.34),
+          this.root
+        );
+      }
+
       const entity = primitive(
         `Tile ${tile}`,
         'box',
         tileMaterials.get(key)!,
-        new pc.Vec3(pos.x, 0.26, pos.z),
-        new pc.Vec3(this.board.tileSize, 0.40, this.board.tileSize),
+        new pc.Vec3(pos.x, tileCenterY, pos.z),
+        new pc.Vec3(this.board.tileSize, this.board.tileHeight, this.board.tileSize),
         this.root
       );
       entity.tags.add(`tile-${tile}`);

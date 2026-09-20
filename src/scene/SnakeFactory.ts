@@ -95,21 +95,21 @@ export class AnimatedSnake {
       const along = (t - 0.5) * this.distance;
       const baseX = this.midpoint.x + this.dir.x * along;
       const baseZ = this.midpoint.z + this.dir.z * along;
+      const baseY = pc.math.lerp(this.start.y, this.end.y, t);
       const envelope = Math.sin(Math.PI * t);
       const wave = Math.sin(t * Math.PI * this.waves + this.time * speed + Number(this.name.length)) * amp * envelope;
       const micro = Math.sin(this.time * 2.8 - t * 9.0) * 0.035 * envelope;
       s.entity.setPosition(
         baseX + this.perp.x * (wave + micro),
-        0.76 + Math.sin(Math.PI * t) * 0.035 + Math.sin(this.time * 2 + t * 7) * 0.008,
+        baseY + 0.16 + Math.sin(Math.PI * t) * 0.035 + Math.sin(this.time * 2 + t * 7) * 0.008,
         baseZ + this.perp.z * (wave + micro)
       );
     }
 
-    const t = 0;
     const headWave = Math.sin(this.time * speed + Number(this.name.length)) * 0.035;
     this.head.setPosition(
       this.start.x + this.perp.x * headWave,
-      0.79 + Math.sin(this.time * 2.1) * 0.018,
+      this.start.y + 0.20 + Math.sin(this.time * 2.1) * 0.018,
       this.start.z + this.perp.z * headWave
     );
     const yaw = Math.atan2(this.dir.x, this.dir.z) * pc.math.RAD_TO_DEG + 90;

@@ -10,6 +10,9 @@ export class Board {
   readonly ladders = LADDERS;
   readonly snakes = SNAKES;
   readonly bonusTiles = BONUS_TILES;
+  readonly tileHeight = 0.40;
+  readonly startTopY = 0.35;
+  readonly risePerTile = 0.055;
 
   competencyFor(tile: number): Competency {
     if (tile <= 10) return 'Pedagogik';
@@ -20,13 +23,14 @@ export class Board {
   }
 
   tilePosition(tile: number): Vec3 {
-    if (tile <= 0) return new Vec3(-this.step * 5.5, 0.72, -this.step * 2.2);
+    if (tile <= 0) return new Vec3(-this.step * 5.5, this.startTopY - 0.08, -this.step * 2.2);
     const row = Math.floor((tile - 1) / 10);
     const index = (tile - 1) % 10;
     const col = row % 2 === 0 ? index : 9 - index;
     const x = (col - 4.5) * this.step;
     const z = (row - 2) * this.step;
-    return new Vec3(x, 0.72, z);
+    const y = this.startTopY + (tile - 1) * this.risePerTile;
+    return new Vec3(x, y, z);
   }
 
   eventFor(tile: number) {

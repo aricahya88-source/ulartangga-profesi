@@ -1,6 +1,6 @@
 # Ular Tangga 3D — 4 Kompetensi Guru
 
-**PlayCanvas Engine + Vite + TypeScript — v3.0.0**
+**PlayCanvas Engine + Vite + TypeScript — v3.1.0**
 
 Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ulang menggunakan PlayCanvas Engine standalone, sedangkan logika permainan dan bank soal 50 butir tetap dipertahankan.
 
@@ -8,6 +8,7 @@ Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ula
 
 - 1 vs 1, Player A dan Player B.
 - Papan 3D 50 petak dengan lima zona kompetensi.
+- Ubin kini **bertingkat / bersusun**: petak 1 paling rendah dan petak 50 paling tinggi untuk menonjolkan efek 3D perjalanan naik.
 - Angka **1–50 menggunakan DOM world-to-screen overlay**, sehingga tidak bergantung pada tekstur petak dan tetap terbaca ketika kamera berpindah sudut.
 - 5 tangga: 4→13, 9→18, 17→28, 26→36, 34→44.
 - 5 ular: 15→6, 24→14, 32→21, 43→31, 48→37.
@@ -17,7 +18,8 @@ Versi ini merupakan rebuild dari proyek Babylon sebelumnya. Mesin 3D ditulis ula
 - Tiap zona tepat 10 soal: 4 PG + 2 B/S + 2 matching + 2 multi-select.
 - Soal diacak sesuai zona dan tidak diulang antarpemain selama bank zona masih tersedia.
 - Ular procedural terdiri dari banyak segmen dan bergerak halus setiap frame.
-- Tangga procedural 3D dengan rail, rung, dan metal caps.
+- Tangga procedural 3D dengan rail, rung, metal caps, dan kini mengikuti perbedaan ketinggian ubin.
+- Ditambahkan **favicon** khusus game.
 - Pion berdiri, bukan bidak pipih.
 - Material pion dapat dipilih: Glossy Plastic, Metallic, Matte, Marble.
 - Material premium: walnut procedural, felt, metal trim, snake scales, marble.

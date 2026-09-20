@@ -10,10 +10,10 @@ interface CameraPreset {
 export class CameraController {
   readonly entity: pc.Entity;
   private current = 0;
-  private yaw = -8;
-  private pitch = 46;
-  private radius = 18.5;
-  private target = new pc.Vec3(0, 0.45, 0);
+  private yaw = -18;
+  private pitch = 42;
+  private radius = 22.5;
+  private target = new pc.Vec3(0, 1.65, 0);
   private desiredYaw = this.yaw;
   private desiredPitch = this.pitch;
   private desiredRadius = this.radius;
@@ -23,10 +23,10 @@ export class CameraController {
   private lastY = 0;
 
   private readonly presets: CameraPreset[] = [
-    { yaw: -8, pitch: 46, radius: 18.5, target: new pc.Vec3(0, 0.45, 0) },
-    { yaw: 38, pitch: 37, radius: 16.2, target: new pc.Vec3(0.5, 0.72, -0.15) },
-    { yaw: -48, pitch: 52, radius: 19.3, target: new pc.Vec3(-0.4, 0.35, 0.25) },
-    { yaw: 0, pitch: 71, radius: 20.5, target: new pc.Vec3(0, 0, 0) }
+    { yaw: -18, pitch: 42, radius: 22.5, target: new pc.Vec3(0, 1.65, 0.0) },
+    { yaw: 32, pitch: 34, radius: 19.8, target: new pc.Vec3(1.2, 1.90, -0.15) },
+    { yaw: -58, pitch: 48, radius: 21.6, target: new pc.Vec3(-1.0, 1.55, 0.35) },
+    { yaw: 0, pitch: 73, radius: 23.8, target: new pc.Vec3(0, 1.55, 0) }
   ];
 
   constructor(private readonly app: pc.Application, private readonly canvas: HTMLCanvasElement) {
@@ -52,8 +52,9 @@ export class CameraController {
     this.desiredTarget.copy(p.target);
   }
 
-  focus(world: pc.Vec3, radius = 13.7, durationBias = 1) {
+  focus(world: pc.Vec3, radius = 14.8, durationBias = 1) {
     this.desiredTarget.lerp(this.desiredTarget, world, Math.min(1, 0.88 * durationBias));
+    this.desiredTarget.y = Math.max(this.desiredTarget.y, world.y + 0.28);
     this.desiredRadius = radius;
     this.desiredPitch = Math.min(this.desiredPitch, 43);
   }
@@ -88,7 +89,7 @@ export class CameraController {
     });
     this.canvas.addEventListener('wheel', (e) => {
       e.preventDefault();
-      this.desiredRadius = pc.math.clamp(this.desiredRadius + e.deltaY * 0.012, 11.5, 24);
+      this.desiredRadius = pc.math.clamp(this.desiredRadius + e.deltaY * 0.012, 12.5, 28);
     }, { passive: false });
   }
 
@@ -123,7 +124,7 @@ export class CameraController {
   }
 
   private lerpAngle(a: number, b: number, t: number) {
-    let delta = ((b - a + 180) % 360 + 360) % 360 - 180;
+    const delta = ((b - a + 180) % 360 + 360) % 360 - 180;
     return a + delta * t;
   }
 }

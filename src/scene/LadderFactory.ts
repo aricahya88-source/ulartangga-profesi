@@ -22,12 +22,13 @@ export class LadderFactory {
     const root = new pc.Entity(name);
     this.app.root.addChild(root);
 
-    const dx = end.x - start.x;
-    const dz = end.z - start.z;
-    const distance = Math.hypot(dx, dz);
-    root.setPosition((start.x + end.x) / 2, 0.84, (start.z + end.z) / 2);
-    const angle = Math.atan2(dz, dx) * pc.math.RAD_TO_DEG;
-    root.setEulerAngles(0, -angle, 0);
+    const delta = end.clone().sub(start);
+    const distanceXZ = Math.hypot(delta.x, delta.z);
+    const distance = delta.length();
+    root.setPosition(start.clone().add(end).mulScalar(0.5));
+    const yaw = Math.atan2(delta.z, delta.x) * pc.math.RAD_TO_DEG;
+    const pitch = Math.atan2(delta.y, Math.max(0.0001, distanceXZ)) * pc.math.RAD_TO_DEG;
+    root.setEulerAngles(0, -yaw, pitch);
 
     box(`${name}-rail-a`, root, this.materials.ladderWood, new pc.Vec3(distance, 0.13, 0.13), new pc.Vec3(0, 0, -0.31));
     box(`${name}-rail-b`, root, this.materials.ladderWood, new pc.Vec3(distance, 0.13, 0.13), new pc.Vec3(0, 0, 0.31));
