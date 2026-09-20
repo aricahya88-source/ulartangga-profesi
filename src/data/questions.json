@@ -1,0 +1,911 @@
+[
+  {
+    "id": "PED-01",
+    "competency": "Pedagogik",
+    "type": "mcq",
+    "title": "Memetakan kebutuhan belajar",
+    "stimulus": "Bu Ratna mengajar kelas dengan kemampuan yang cukup beragam. Beberapa siswa cepat memahami materi, sementara sebagian lainnya membutuhkan contoh tambahan dan waktu lebih panjang. Ia memeriksa hasil asesmen awal serta berbicara singkat dengan siswa tentang bagian yang masih sulit. Pada pertemuan berikutnya, ia menyiapkan kegiatan dan bantuan yang berbeda sesuai kebutuhan mereka.",
+    "prompt": "Tindakan Bu Ratna paling kuat mencerminkan kompetensi ....",
+    "options": [
+      "Profesional",
+      "Sosial",
+      "Pedagogik",
+      "Kepribadian"
+    ],
+    "answer": 2,
+    "explanation": "Fokus utama kasus adalah memahami kebutuhan peserta didik dan menyesuaikan pembelajaran berdasarkan informasi tersebut."
+  },
+  {
+    "id": "PED-02",
+    "competency": "Pedagogik",
+    "type": "mcq",
+    "title": "Menindaklanjuti asesmen",
+    "stimulus": "Pak Dimas memberikan asesmen singkat sebelum memulai materi baru. Hasilnya menunjukkan hampir separuh siswa belum menguasai salah satu konsep prasyarat. Ia kemudian memberikan penguatan kepada kelompok tersebut dan tugas pengayaan kepada siswa yang sudah siap. Setelah itu, barulah ia masuk ke materi utama.",
+    "prompt": "Keputusan Pak Dimas paling tepat dipahami sebagai ....",
+    "options": [
+      "Pemberian perlakuan berdasarkan prestasi",
+      "Pemanfaatan asesmen untuk menentukan tindak lanjut",
+      "Pemisahan siswa berdasarkan kemampuan akademik",
+      "Pengembangan materi berdasarkan bidang ilmu"
+    ],
+    "answer": 1,
+    "explanation": "Asesmen digunakan untuk memetakan kesiapan belajar dan menentukan tindak lanjut yang sesuai."
+  },
+  {
+    "id": "PED-03",
+    "competency": "Pedagogik",
+    "type": "mcq",
+    "title": "Menyesuaikan strategi",
+    "stimulus": "Selama dua pertemuan, Bu Nita menggunakan penjelasan langsung untuk membahas konsep yang cukup abstrak. Siswa mampu mengingat istilah tetapi kesulitan menerapkan konsep pada kasus nyata. Bu Nita lalu menggunakan simulasi, diskusi kasus, dan latihan pemecahan masalah. Hasil tugas berikutnya menunjukkan pemahaman siswa mulai meningkat.",
+    "prompt": "Pertimbangan utama dalam perubahan tersebut adalah ....",
+    "options": [
+      "Metode yang bervariasi selalu lebih menarik",
+      "Guru harus menghindari metode ceramah",
+      "Semua siswa lebih menyukai kerja kelompok",
+      "Strategi perlu disesuaikan dengan tujuan dan kesulitan siswa"
+    ],
+    "answer": 3,
+    "explanation": "Perubahan strategi didasarkan pada bukti kesulitan belajar dan tujuan pembelajaran, bukan sekadar variasi metode."
+  },
+  {
+    "id": "PED-04",
+    "competency": "Pedagogik",
+    "type": "mcq",
+    "title": "Perencanaan pembelajaran",
+    "stimulus": "Sebelum memulai satu topik, Pak Agung menentukan hasil belajar yang ingin dicapai. Ia memilih aktivitas, media, dan bentuk asesmen yang dianggap sesuai. Ia memastikan setiap kegiatan membantu siswa menuju tujuan yang telah dirumuskan. Ia juga menyiapkan alternatif kegiatan jika sebagian siswa mengalami kesulitan.",
+    "prompt": "Kompetensi yang paling dominan pada tindakan tersebut adalah ....",
+    "options": [
+      "Pedagogik",
+      "Sosial",
+      "Profesional",
+      "Kepribadian"
+    ],
+    "answer": 0,
+    "explanation": "Kasus menekankan penyelarasan tujuan, aktivitas, media, asesmen, dan antisipasi kebutuhan siswa."
+  },
+  {
+    "id": "PED-05",
+    "competency": "Pedagogik",
+    "type": "tf",
+    "title": "Nilai yang sama, kebutuhan berbeda",
+    "stimulus": "Dua siswa memperoleh nilai 55 pada asesmen yang sama. Setelah ditelusuri, siswa pertama belum memahami konsep, sedangkan siswa kedua memahami konsep tetapi kesulitan mengatur waktu ketika mengerjakan tes. Guru tidak langsung memberikan remedial yang sama kepada keduanya. Ia mencari bentuk bantuan yang sesuai dengan penyebab kesulitan masing-masing.",
+    "prompt": "Pernyataan: Nilai yang sama selalu menunjukkan kebutuhan belajar yang sama.",
+    "answer": false,
+    "explanation": "Nilai yang sama dapat muncul dari penyebab yang berbeda, sehingga guru perlu menganalisis kebutuhan sebelum menentukan intervensi."
+  },
+  {
+    "id": "PED-06",
+    "competency": "Pedagogik",
+    "type": "tf",
+    "title": "Media yang populer",
+    "stimulus": "Bu Laras menemukan aplikasi pembelajaran yang sedang populer dan sangat menarik secara visual. Banyak guru lain menggunakannya karena fitur kompetisinya membuat siswa antusias. Bu Laras memeriksa kesesuaian fitur dengan tujuan pembelajaran dan kondisi perangkat siswa. Ia akhirnya hanya menggunakan bagian yang benar-benar relevan.",
+    "prompt": "Pernyataan: Media pembelajaran sebaiknya dipilih terutama karena popularitas dan daya tarik tampilannya.",
+    "answer": false,
+    "explanation": "Media dipilih berdasarkan relevansi terhadap tujuan dan kebutuhan pembelajaran, bukan popularitas semata."
+  },
+  {
+    "id": "PED-07",
+    "competency": "Pedagogik",
+    "type": "match",
+    "title": "Tahapan pembelajaran",
+    "stimulus": "Pak Rio ingin memperbaiki pembelajaran setelah melihat keterlibatan siswa yang rendah. Ia mengumpulkan informasi awal, merancang aktivitas yang lebih partisipatif, memantau keterlibatan, dan mengevaluasi hasilnya. Setiap tahap memiliki fungsi berbeda tetapi saling berkaitan. Ia ingin memastikan keputusan berikutnya didasarkan pada bukti.",
+    "prompt": "Jodohkan tindakan dengan fungsi pedagogiknya.",
+    "pairs": [
+      {
+        "left": "Mengumpulkan informasi awal",
+        "right": "Memetakan kebutuhan belajar"
+      },
+      {
+        "left": "Merancang aktivitas partisipatif",
+        "right": "Menentukan strategi pembelajaran"
+      },
+      {
+        "left": "Memantau keterlibatan",
+        "right": "Mengamati proses belajar"
+      },
+      {
+        "left": "Mengevaluasi hasil",
+        "right": "Menentukan tindak lanjut"
+      }
+    ],
+    "explanation": "Keempat tindakan membentuk siklus pedagogik: memahami kebutuhan, merancang, memantau, dan menindaklanjuti."
+  },
+  {
+    "id": "PED-08",
+    "competency": "Pedagogik",
+    "type": "match",
+    "title": "Asesmen dan tindak lanjut",
+    "stimulus": "Bu Mira menggunakan beberapa bentuk asesmen dalam satu unit pembelajaran. Ia tidak memperlakukan semua asesmen sebagai pemberi nilai akhir. Sebagian dipakai untuk mengetahui kesiapan, sebagian untuk memantau proses, dan sebagian untuk menilai capaian. Hasil setiap asesmen digunakan dengan tujuan yang berbeda.",
+    "prompt": "Jodohkan jenis penggunaan asesmen dengan tujuannya.",
+    "pairs": [
+      {
+        "left": "Asesmen sebelum materi",
+        "right": "Mengetahui kesiapan awal"
+      },
+      {
+        "left": "Kuis singkat saat proses",
+        "right": "Memantau perkembangan"
+      },
+      {
+        "left": "Tugas akhir unit",
+        "right": "Menilai capaian"
+      },
+      {
+        "left": "Analisis kesalahan siswa",
+        "right": "Merancang perbaikan"
+      }
+    ],
+    "explanation": "Asesmen memiliki fungsi berbeda tergantung waktu dan tujuan penggunaannya dalam pembelajaran."
+  },
+  {
+    "id": "PED-09",
+    "competency": "Pedagogik",
+    "type": "multi",
+    "title": "Pembelajaran berpusat pada murid",
+    "stimulus": "Pak Irfan memberi proyek dengan tujuan dan kriteria yang jelas. Siswa diberi ruang memilih topik kecil, mencari sumber, dan menentukan bentuk penyajian. Pak Irfan tetap memberi umpan balik serta dukungan bagi kelompok yang kesulitan. Ia ingin memberi kemandirian tanpa kehilangan arah capaian pembelajaran.",
+    "prompt": "Pilih tindakan yang sesuai dengan kompetensi pedagogik pada kasus tersebut.",
+    "options": [
+      "Menetapkan tujuan belajar yang jelas",
+      "Memberi ruang pilihan kepada siswa",
+      "Memberikan dukungan sesuai kebutuhan",
+      "Membiarkan siswa bekerja tanpa arah",
+      "Menggunakan umpan balik untuk membantu kemajuan"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Pedagogik mencakup perancangan tujuan, pemberian ruang partisipasi, dukungan sesuai kebutuhan, dan umpan balik."
+  },
+  {
+    "id": "PED-10",
+    "competency": "Pedagogik",
+    "type": "multi",
+    "title": "Diferensiasi yang tepat",
+    "stimulus": "Dalam satu kelas, sebagian siswa sudah dapat menerapkan konsep secara mandiri, sedangkan siswa lain masih membutuhkan contoh dan petunjuk bertahap. Guru memberi tantangan tambahan kepada kelompok pertama dan dukungan lebih terstruktur kepada kelompok kedua. Capaian pembelajaran akhir tetap sama untuk semua siswa. Guru terus memantau apakah dukungan yang diberikan masih diperlukan.",
+    "prompt": "Tindakan mana yang tepat dalam praktik tersebut?",
+    "options": [
+      "Menyesuaikan dukungan berdasarkan kesiapan",
+      "Menjaga capaian akhir tetap jelas",
+      "Memantau perubahan kebutuhan siswa",
+      "Menurunkan target untuk siswa yang kesulitan",
+      "Memberi tantangan tambahan bagi siswa yang siap"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Diferensiasi menyesuaikan dukungan dan tantangan tanpa otomatis menurunkan capaian belajar."
+  },
+  {
+    "id": "PRO-01",
+    "competency": "Profesional",
+    "type": "mcq",
+    "title": "Penguasaan konsep",
+    "stimulus": "Saat membahas suatu topik, seorang siswa mengajukan pertanyaan yang tidak tercantum di buku teks. Pak Hasan mampu menjelaskan hubungan pertanyaan itu dengan konsep yang sedang dipelajari dan memberi contoh yang relevan. Ia juga menjelaskan batas penerapan konsep agar siswa tidak menarik kesimpulan yang keliru. Penjelasannya menunjukkan pemahaman yang melampaui isi satu sumber.",
+    "prompt": "Kompetensi yang paling dominan adalah ....",
+    "options": [
+      "Sosial",
+      "Profesional",
+      "Pedagogik",
+      "Kepribadian"
+    ],
+    "answer": 1,
+    "explanation": "Kasus menekankan kedalaman penguasaan materi dan kemampuan menghubungkan konsep secara tepat."
+  },
+  {
+    "id": "PRO-02",
+    "competency": "Profesional",
+    "type": "mcq",
+    "title": "Mengevaluasi sumber",
+    "stimulus": "Bu Nadia menemukan artikel internet yang terlihat meyakinkan dan telah banyak dibagikan. Sebelum menggunakannya sebagai bahan ajar, ia memeriksa penulis, data, tanggal publikasi, dan membandingkan isinya dengan sumber akademik lain. Ia menemukan beberapa bagian yang tidak cukup didukung bukti. Bagian tersebut akhirnya tidak digunakan.",
+    "prompt": "Tindakan Bu Nadia terutama menunjukkan ....",
+    "options": [
+      "Kemampuan memilih strategi belajar",
+      "Kemampuan menjaga komunikasi",
+      "Kemampuan mengelola kelas",
+      "Kemampuan menilai validitas sumber keilmuan"
+    ],
+    "answer": 3,
+    "explanation": "Fokusnya adalah memastikan kualitas dan ketepatan substansi melalui evaluasi sumber."
+  },
+  {
+    "id": "PRO-03",
+    "competency": "Profesional",
+    "type": "mcq",
+    "title": "Pembaruan keilmuan",
+    "stimulus": "Pak Burhan telah mengajar mata pelajaran yang sama lebih dari sepuluh tahun. Ia tetap membaca jurnal, mengikuti seminar, dan berdiskusi di komunitas bidang studinya. Ia menemukan beberapa contoh pada bahan ajar lama sudah kurang relevan. Materi kemudian diperbarui tanpa mengubah konsep yang masih valid.",
+    "prompt": "Praktik tersebut terutama menunjukkan ....",
+    "options": [
+      "Pengembangan kompetensi profesional berkelanjutan",
+      "Ketergantungan pada sumber eksternal",
+      "Kemampuan pedagogik mengelola siswa",
+      "Kemampuan sosial membangun jejaring"
+    ],
+    "answer": 0,
+    "explanation": "Inti kasus adalah menjaga kemutakhiran pengetahuan bidang studi secara berkelanjutan."
+  },
+  {
+    "id": "PRO-04",
+    "competency": "Profesional",
+    "type": "mcq",
+    "title": "Ketika guru belum tahu",
+    "stimulus": "Seorang siswa mengajukan pertanyaan yang sangat spesifik. Guru belum yakin bahwa jawaban yang ada di pikirannya benar. Ia mengatakan perlu memeriksa beberapa sumber agar tidak memberikan informasi keliru. Pada pertemuan berikutnya, ia kembali dengan jawaban yang telah diverifikasi.",
+    "prompt": "Sikap guru paling tepat menunjukkan ....",
+    "options": [
+      "Kurang persiapan mengajar",
+      "Rendah kepercayaan diri",
+      "Tanggung jawab terhadap ketepatan materi",
+      "Ketergantungan berlebihan pada referensi"
+    ],
+    "answer": 2,
+    "explanation": "Profesionalisme bukan berarti mengetahui semua hal, melainkan menjaga ketepatan dan akuntabilitas substansi."
+  },
+  {
+    "id": "PRO-05",
+    "competency": "Profesional",
+    "type": "tf",
+    "title": "Pengalaman dan pembaruan ilmu",
+    "stimulus": "Pak Jaya telah mengajar selama lima belas tahun dan merasa sangat menguasai mata pelajarannya. Ia berhenti mengikuti pelatihan dan tidak lagi membaca perkembangan bidang ilmu karena menilai pengalaman sudah cukup. Sementara itu, beberapa konsep dan contoh di bidang tersebut terus berkembang. Bahan ajarnya tetap sama dari tahun ke tahun.",
+    "prompt": "Pernyataan: Pengalaman panjang saja sudah cukup untuk menjaga kompetensi profesional tetap mutakhir.",
+    "answer": false,
+    "explanation": "Pengalaman penting, tetapi kompetensi profesional juga menuntut pembaruan pengetahuan secara berkelanjutan."
+  },
+  {
+    "id": "PRO-06",
+    "competency": "Profesional",
+    "type": "tf",
+    "title": "Sumber yang banyak",
+    "stimulus": "Bu Sari mengumpulkan banyak artikel, video, dan unggahan media sosial untuk memperkaya materi. Ia menganggap semakin banyak sumber berarti materi semakin berkualitas. Namun, sebagian sumber tidak jelas penulis dan dasar datanya. Ia belum sempat memeriksa kredibilitas semua sumber tersebut.",
+    "prompt": "Pernyataan: Banyaknya sumber sudah cukup menjadi indikator kualitas materi yang disiapkan guru.",
+    "answer": false,
+    "explanation": "Kualitas sumber lebih penting daripada jumlah; guru perlu menilai kredibilitas dan ketepatan isinya."
+  },
+  {
+    "id": "PRO-07",
+    "competency": "Profesional",
+    "type": "match",
+    "title": "Tindakan profesional",
+    "stimulus": "Bu Amalia menggunakan berbagai cara untuk menjaga kualitas materi yang diajarkan. Ia memeriksa fakta, memperbarui contoh, membandingkan referensi, dan menghubungkan konsep yang saling terkait. Setiap tindakan memiliki tujuan akademik yang berbeda. Ia ingin bahan ajar tetap akurat sekaligus relevan.",
+    "prompt": "Jodohkan tindakan dengan tujuan profesionalnya.",
+    "pairs": [
+      {
+        "left": "Memeriksa fakta",
+        "right": "Menjaga akurasi materi"
+      },
+      {
+        "left": "Memperbarui contoh",
+        "right": "Menjaga relevansi konteks"
+      },
+      {
+        "left": "Membandingkan referensi",
+        "right": "Menguji kredibilitas informasi"
+      },
+      {
+        "left": "Menghubungkan konsep",
+        "right": "Memperdalam struktur keilmuan"
+      }
+    ],
+    "explanation": "Keempat tindakan merupakan bentuk penguasaan dan pemeliharaan kualitas substansi bidang ilmu."
+  },
+  {
+    "id": "PRO-08",
+    "competency": "Profesional",
+    "type": "match",
+    "title": "Sumber dan penggunaan",
+    "stimulus": "Pak Deni menyiapkan materi dari beberapa sumber berbeda. Ia tidak menggunakan semuanya dengan cara yang sama karena karakter tiap sumber berbeda. Ada sumber untuk data terbaru, ada untuk konsep dasar, ada untuk contoh kasus, dan ada yang justru dipakai sebagai bahan kritik. Ia ingin siswa memahami fungsi setiap sumber.",
+    "prompt": "Jodohkan sumber dengan penggunaan yang paling tepat.",
+    "pairs": [
+      {
+        "left": "Buku teks utama",
+        "right": "Landasan konsep dasar"
+      },
+      {
+        "left": "Artikel ilmiah terbaru",
+        "right": "Pembaruan perkembangan ilmu"
+      },
+      {
+        "left": "Data resmi",
+        "right": "Contoh berbasis bukti"
+      },
+      {
+        "left": "Unggahan viral yang meragukan",
+        "right": "Bahan latihan verifikasi informasi"
+      }
+    ],
+    "explanation": "Profesionalisme mencakup kemampuan memilih dan menggunakan sumber sesuai kekuatan serta keterbatasannya."
+  },
+  {
+    "id": "PRO-09",
+    "competency": "Profesional",
+    "type": "multi",
+    "title": "Menggunakan AI secara profesional",
+    "stimulus": "Bu Nita menggunakan AI generatif untuk membantu menemukan ide bahan pembelajaran. AI menghasilkan penjelasan yang rapi, tetapi beberapa detail tidak akurat ketika dibandingkan dengan referensi lain. Bu Nita memperbaiki bagian tersebut dan hanya menggunakan materi yang dapat dipertanggungjawabkan. Ia menyadari tanggung jawab akademik tetap berada pada guru.",
+    "prompt": "Pilih tindakan yang sesuai dengan kompetensi profesional.",
+    "options": [
+      "Memeriksa kebenaran hasil AI",
+      "Membandingkan dengan sumber tepercaya",
+      "Menyesuaikan contoh dengan perkembangan ilmu",
+      "Menggunakan semua keluaran AI karena terlihat meyakinkan",
+      "Bertanggung jawab atas substansi yang disampaikan"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "AI dapat membantu, tetapi guru tetap harus memverifikasi, memperbarui, dan bertanggung jawab terhadap substansi."
+  },
+  {
+    "id": "PRO-10",
+    "competency": "Profesional",
+    "type": "multi",
+    "title": "Menjaga kualitas materi",
+    "stimulus": "Pak Anton sedang memperbarui modul pembelajaran. Ia mempertahankan konsep yang masih benar, mengganti data yang sudah usang, memeriksa kembali istilah teknis, dan menambahkan contoh yang relevan. Ia juga membandingkan beberapa referensi sebelum menetapkan perubahan. Tujuannya adalah menjaga materi tetap akurat dan kontekstual.",
+    "prompt": "Tindakan mana yang mendukung kompetensi profesional?",
+    "options": [
+      "Mempertahankan konsep yang masih valid",
+      "Memperbarui data yang usang",
+      "Memeriksa istilah teknis",
+      "Mengubah materi hanya agar tampak baru",
+      "Membandingkan beberapa referensi"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Kompetensi profesional menuntut akurasi, kemutakhiran, dan penguasaan substansi, bukan perubahan kosmetik."
+  },
+  {
+    "id": "KEP-01",
+    "competency": "Kepribadian",
+    "type": "mcq",
+    "title": "Mengakui kesalahan",
+    "stimulus": "Bu Indah menyadari nilai salah satu siswa dimasukkan secara keliru. Tidak ada siswa yang mengetahui kesalahan itu dan nilai tersebut justru membuat laporan kelas tampak lebih baik. Ia tetap memeriksa ulang data dan memperbaiki nilai sesuai hasil sebenarnya. Ia juga menjelaskan koreksi kepada pihak yang berkaitan.",
+    "prompt": "Perilaku Bu Indah terutama menunjukkan ....",
+    "options": [
+      "Kemampuan administrasi",
+      "Keterampilan sosial",
+      "Kemampuan pedagogik",
+      "Integritas"
+    ],
+    "answer": 3,
+    "explanation": "Ia memilih tindakan yang benar meskipun kesalahan dapat saja disembunyikan."
+  },
+  {
+    "id": "KEP-02",
+    "competency": "Kepribadian",
+    "type": "mcq",
+    "title": "Keteladanan",
+    "stimulus": "Pak Seno selalu meminta siswa hadir tepat waktu dan menyiapkan perlengkapan sebelum pembelajaran. Ia sendiri berusaha datang lebih awal dan memastikan kegiatan sudah siap. Ketika suatu hari terlambat karena keadaan darurat, ia menjelaskan situasinya dan meminta maaf. Sikapnya konsisten dengan aturan yang ia minta dari siswa.",
+    "prompt": "Hal yang paling ditunjukkan adalah ....",
+    "options": [
+      "Penguasaan materi",
+      "Keteladanan dalam perilaku",
+      "Pengelolaan pembelajaran",
+      "Komunikasi profesional"
+    ],
+    "answer": 1,
+    "explanation": "Guru tidak hanya memberi tuntutan, tetapi menunjukkan perilaku yang konsisten dengan nilai yang diajarkan."
+  },
+  {
+    "id": "KEP-03",
+    "competency": "Kepribadian",
+    "type": "mcq",
+    "title": "Menerima koreksi",
+    "stimulus": "Seorang siswa menunjukkan bahwa angka yang digunakan guru dalam contoh ternyata keliru. Guru awalnya merasa yakin karena contoh itu telah digunakan di kelas sebelumnya. Ia memeriksa kembali sumber dan menemukan siswa tersebut benar. Guru mengakui kekeliruan dan memperbaiki penjelasan tanpa menyalahkan siswa.",
+    "prompt": "Sikap yang paling tepat menggambarkan ....",
+    "options": [
+      "Kompetensi sosial",
+      "Kompetensi profesional semata",
+      "Kedewasaan dan keterbukaan dalam bersikap",
+      "Kelemahan menjaga kewibawaan"
+    ],
+    "answer": 2,
+    "explanation": "Titik utama kasus adalah cara guru merespons koreksi secara matang dan terbuka."
+  },
+  {
+    "id": "KEP-04",
+    "competency": "Kepribadian",
+    "type": "mcq",
+    "title": "Mengendalikan emosi",
+    "stimulus": "Pada suatu hari, Pak Arman menghadapi masalah pribadi sebelum masuk kelas. Di kelas, seorang siswa juga melakukan kesalahan yang biasanya membuatnya kesal. Pak Arman menyadari kondisi emosinya dan menenangkan diri sebelum merespons. Ia menyelesaikan masalah siswa tanpa melampiaskan persoalan pribadinya.",
+    "prompt": "Tindakan tersebut menunjukkan ....",
+    "options": [
+      "Kematangan emosional",
+      "Kompetensi sosial",
+      "Kemampuan pedagogik",
+      "Penguasaan profesi"
+    ],
+    "answer": 0,
+    "explanation": "Guru mampu mengelola kondisi pribadinya agar tidak merugikan peserta didik."
+  },
+  {
+    "id": "KEP-05",
+    "competency": "Kepribadian",
+    "type": "tf",
+    "title": "Konsistensi nilai",
+    "stimulus": "Bu Wulan sering mengingatkan siswa agar tidak melakukan plagiarisme. Ketika membutuhkan bahan presentasi dengan cepat, ia menemukan materi orang lain yang sangat sesuai. Ia memilih menyalin seluruh materi tanpa mencantumkan sumber karena yakin siswa tidak akan mengetahuinya. Ia tetap menuntut siswa mencantumkan sumber pada tugas mereka.",
+    "prompt": "Pernyataan: Sikap Bu Wulan tetap dapat dianggap sebagai keteladanan karena aturan untuk guru dan siswa boleh berbeda.",
+    "answer": false,
+    "explanation": "Keteladanan menuntut konsistensi antara nilai yang diajarkan dan perilaku guru sendiri."
+  },
+  {
+    "id": "KEP-06",
+    "competency": "Kepribadian",
+    "type": "tf",
+    "title": "Menggunakan kewenangan",
+    "stimulus": "Seorang siswa melakukan pelanggaran aturan kelas. Guru ingin memberi hukuman yang membuat siswa malu di depan teman-temannya agar menjadi contoh. Ia beralasan bahwa rasa malu akan membuat siswa jera. Guru tidak mempertimbangkan dampak tindakan tersebut terhadap martabat siswa.",
+    "prompt": "Pernyataan: Penggunaan kewenangan seperti itu mencerminkan sikap arif dan matang.",
+    "answer": false,
+    "explanation": "Kewenangan seharusnya digunakan secara proporsional dan tetap menjaga martabat peserta didik."
+  },
+  {
+    "id": "KEP-07",
+    "competency": "Kepribadian",
+    "type": "match",
+    "title": "Nilai kepribadian",
+    "stimulus": "Pak Yudi mengevaluasi beberapa tindakan yang pernah ia lakukan sebagai guru. Ada situasi ketika ia harus mengakui kesalahan, menjaga konsistensi, mengendalikan emosi, dan mempertanggungjawabkan keputusan. Ia menyadari keempatnya berkaitan dengan aspek kepribadian yang berbeda. Ia ingin memahami istilah yang paling tepat untuk masing-masing tindakan.",
+    "prompt": "Jodohkan tindakan dengan nilai kepribadiannya.",
+    "pairs": [
+      {
+        "left": "Mengakui kesalahan",
+        "right": "Integritas"
+      },
+      {
+        "left": "Konsisten antara ucapan dan tindakan",
+        "right": "Keteladanan"
+      },
+      {
+        "left": "Menahan respons emosional",
+        "right": "Kematangan emosi"
+      },
+      {
+        "left": "Memperbaiki dampak keputusan",
+        "right": "Akuntabilitas"
+      }
+    ],
+    "explanation": "Kompetensi kepribadian mencakup integritas, keteladanan, kematangan, dan tanggung jawab."
+  },
+  {
+    "id": "KEP-08",
+    "competency": "Kepribadian",
+    "type": "match",
+    "title": "Sikap guru dalam kasus",
+    "stimulus": "Bu Rika menerima beberapa situasi yang menuntut sikap pribadi yang matang. Ia harus merespons kritik, menjaga rahasia, menghindari perlakuan bias, dan menggunakan kewenangan secara tepat. Setiap situasi menuntut nilai yang berbeda. Ia mencoba memetakan prinsip yang paling kuat pada tiap tindakan.",
+    "prompt": "Jodohkan situasi dengan prinsip yang paling tepat.",
+    "pairs": [
+      {
+        "left": "Menerima kritik dengan terbuka",
+        "right": "Kedewasaan"
+      },
+      {
+        "left": "Tidak menyebarkan informasi pribadi siswa",
+        "right": "Tanggung jawab etis"
+      },
+      {
+        "left": "Menilai tanpa prasangka",
+        "right": "Keadilan"
+      },
+      {
+        "left": "Memberi konsekuensi secara proporsional",
+        "right": "Kearifan"
+      }
+    ],
+    "explanation": "Kepribadian guru tercermin pada cara ia bersikap konsisten, adil, matang, dan bertanggung jawab."
+  },
+  {
+    "id": "KEP-09",
+    "competency": "Kepribadian",
+    "type": "multi",
+    "title": "Sikap berintegritas",
+    "stimulus": "Pak Dedi sedang mengevaluasi kebiasaannya sebagai guru. Ia ingin memastikan perilakunya sejalan dengan nilai yang selalu disampaikan kepada siswa. Ia mulai memperhatikan cara mengakui kesalahan, menggunakan kewenangan, menjaga kejujuran, dan memperlakukan siswa. Ia ingin mengetahui tindakan mana yang perlu dipertahankan.",
+    "prompt": "Pilih tindakan yang menunjukkan kompetensi kepribadian yang kuat.",
+    "options": [
+      "Mengakui kesalahan sendiri",
+      "Konsisten antara aturan dan tindakan",
+      "Menggunakan kewenangan secara proporsional",
+      "Menutupi kekeliruan agar wibawa terjaga",
+      "Menjaga martabat peserta didik"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Kompetensi kepribadian menuntut integritas, konsistensi, kearifan, dan penghormatan terhadap martabat peserta didik."
+  },
+  {
+    "id": "KEP-10",
+    "competency": "Kepribadian",
+    "type": "multi",
+    "title": "Refleksi diri",
+    "stimulus": "Bu Rika menerima umpan balik dari siswa dan rekan guru. Beberapa komentar positif, tetapi ada pula kritik terhadap cara ia merespons pertanyaan. Ia tidak langsung menolak kritik dan mencoba melihat pola yang berulang. Ia kemudian menentukan aspek perilaku yang perlu diperbaiki.",
+    "prompt": "Tindakan mana yang mendukung kompetensi kepribadian?",
+    "options": [
+      "Mendengarkan umpan balik",
+      "Mengevaluasi perilaku sendiri",
+      "Menentukan langkah perbaikan",
+      "Mengabaikan kritik yang membuat tidak nyaman",
+      "Memisahkan kritik perilaku dari serangan pribadi"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Refleksi diri yang matang membutuhkan keterbukaan, evaluasi, dan rencana perbaikan."
+  },
+  {
+    "id": "SOS-01",
+    "competency": "Sosial",
+    "type": "mcq",
+    "title": "Mendengarkan siswa",
+    "stimulus": "Seorang siswa yang biasanya aktif tiba-tiba jarang mengerjakan tugas. Guru tidak langsung menyimpulkan bahwa siswa tersebut malas. Ia mengajak siswa berbicara secara pribadi dan memberi kesempatan untuk menjelaskan situasinya. Informasi tersebut kemudian dipertimbangkan saat menentukan langkah berikutnya.",
+    "prompt": "Kompetensi yang paling dominan dalam proses komunikasi tersebut adalah ....",
+    "options": [
+      "Pedagogik",
+      "Sosial",
+      "Profesional",
+      "Kepribadian"
+    ],
+    "answer": 1,
+    "explanation": "Fokus kasus berada pada komunikasi empatik dan interaksi efektif dengan peserta didik."
+  },
+  {
+    "id": "SOS-02",
+    "competency": "Sosial",
+    "type": "mcq",
+    "title": "Komunikasi dengan orang tua",
+    "stimulus": "Nilai seorang siswa menurun dalam beberapa minggu terakhir. Guru mengundang orang tua dan membawa data tugas serta hasil asesmen. Ia menjelaskan kondisi tanpa menyalahkan siswa maupun keluarga, lalu meminta informasi dari orang tua tentang situasi di rumah. Keduanya kemudian menyepakati bentuk dukungan yang dapat dilakukan.",
+    "prompt": "Tindakan guru paling tepat menunjukkan ....",
+    "options": [
+      "Komunikasi kolaboratif dengan orang tua",
+      "Kemampuan pedagogik saja",
+      "Penguasaan materi",
+      "Keteladanan pribadi"
+    ],
+    "answer": 0,
+    "explanation": "Guru membangun komunikasi dua arah berdasarkan data dan mencari solusi bersama orang tua."
+  },
+  {
+    "id": "SOS-03",
+    "competency": "Sosial",
+    "type": "mcq",
+    "title": "Perbedaan pendapat",
+    "stimulus": "Dua guru memiliki pendapat berbeda tentang pelaksanaan sebuah kegiatan sekolah. Keduanya memiliki alasan yang didasarkan pada pengalaman masing-masing. Salah satu guru menyampaikan argumennya tanpa menyerang pribadi rekannya dan bersedia mendengarkan pertimbangan lain. Mereka akhirnya menemukan beberapa bagian yang dapat disepakati.",
+    "prompt": "Perilaku tersebut menunjukkan ....",
+    "options": [
+      "Kompromi tanpa prinsip",
+      "Kemampuan pedagogik",
+      "Kompetensi profesional bidang studi",
+      "Komunikasi dan kolaborasi profesional"
+    ],
+    "answer": 3,
+    "explanation": "Kompetensi sosial mencakup kemampuan berinteraksi efektif dengan kolega meskipun terdapat perbedaan pandangan."
+  },
+  {
+    "id": "SOS-04",
+    "competency": "Sosial",
+    "type": "mcq",
+    "title": "Menghargai perbedaan",
+    "stimulus": "Dalam satu kelas terdapat siswa dari latar belakang sosial, bahasa, dan budaya yang berbeda. Guru menggunakan komunikasi yang tidak merendahkan kelompok tertentu dan memberi kesempatan yang sama untuk berpartisipasi. Ketika muncul candaan yang berpotensi menyinggung kelompok lain, guru mengarahkannya menjadi diskusi tentang penghormatan. Aturan kelas tetap diterapkan secara konsisten.",
+    "prompt": "Sikap tersebut paling mencerminkan ....",
+    "options": [
+      "Penguasaan kelas",
+      "Penyesuaian kurikulum",
+      "Interaksi inklusif dan tidak diskriminatif",
+      "Penguasaan materi"
+    ],
+    "answer": 2,
+    "explanation": "Kompetensi sosial mencakup kemampuan membangun interaksi yang menghargai perbedaan."
+  },
+  {
+    "id": "SOS-05",
+    "competency": "Sosial",
+    "type": "tf",
+    "title": "Menghindari orang tua",
+    "stimulus": "Seorang guru pernah mengalami percakapan yang tidak menyenangkan dengan salah satu orang tua siswa. Sejak itu, ia memilih menghindari semua komunikasi langsung dengan orang tua tersebut. Informasi perkembangan siswa hanya disampaikan lewat siswa agar guru tidak perlu menghadapi konflik. Tidak ada upaya mencari cara komunikasi yang lebih profesional.",
+    "prompt": "Pernyataan: Menghindari seluruh komunikasi merupakan bentuk kompetensi sosial yang baik karena dapat mencegah konflik.",
+    "answer": false,
+    "explanation": "Kompetensi sosial menuntut kemampuan mengelola komunikasi, bukan sekadar menghindarinya."
+  },
+  {
+    "id": "SOS-06",
+    "competency": "Sosial",
+    "type": "tf",
+    "title": "Membagikan informasi",
+    "stimulus": "Seorang siswa mengalami masalah pribadi yang memengaruhi pembelajaran. Guru ingin meminta pendapat dan membagikan detail masalah tersebut kepada seluruh grup guru. Sebagian anggota grup sebenarnya tidak terlibat dalam penanganan siswa itu. Guru belum memilah informasi mana yang memang perlu diketahui pihak lain.",
+    "prompt": "Pernyataan: Semua informasi boleh dibagikan kepada semua rekan kerja selama tujuannya untuk membantu siswa.",
+    "answer": false,
+    "explanation": "Koordinasi profesional harus tetap mempertimbangkan relevansi, proporsionalitas, dan batas informasi."
+  },
+  {
+    "id": "SOS-07",
+    "competency": "Sosial",
+    "type": "match",
+    "title": "Pihak dan bentuk komunikasi",
+    "stimulus": "Bu Hana menangani beberapa kebutuhan siswa yang melibatkan pihak berbeda. Ia menyadari cara berbicara dengan siswa, orang tua, kolega, dan masyarakat tidak selalu sama. Tujuan komunikasinya juga berbeda pada tiap pihak. Ia ingin memilih bentuk komunikasi yang paling tepat.",
+    "prompt": "Jodohkan pihak dengan bentuk komunikasi yang paling sesuai.",
+    "pairs": [
+      {
+        "left": "Peserta didik",
+        "right": "Dialog empatik dan menghargai"
+      },
+      {
+        "left": "Orang tua/wali",
+        "right": "Komunikasi berbasis data dan kolaborasi"
+      },
+      {
+        "left": "Kolega",
+        "right": "Koordinasi profesional"
+      },
+      {
+        "left": "Masyarakat",
+        "right": "Komunikasi representatif dan terbuka"
+      }
+    ],
+    "explanation": "Kompetensi sosial menuntut kemampuan menyesuaikan komunikasi dengan pihak dan konteks."
+  },
+  {
+    "id": "SOS-08",
+    "competency": "Sosial",
+    "type": "match",
+    "title": "Situasi kolaborasi",
+    "stimulus": "Pak Fajar menghadapi beberapa situasi komunikasi dalam pekerjaannya. Ia perlu menyelesaikan konflik, meminta dukungan, menyampaikan informasi, dan menjaga batas kewenangan. Semua situasi membutuhkan kerja sama, tetapi dengan fokus yang berbeda. Ia mencoba memilih respons yang paling tepat.",
+    "prompt": "Jodohkan situasi dengan respons sosial yang paling sesuai.",
+    "pairs": [
+      {
+        "left": "Konflik dengan kolega",
+        "right": "Mendengarkan dan mencari titik temu"
+      },
+      {
+        "left": "Perlu dukungan orang tua",
+        "right": "Mengajak berdiskusi berdasarkan data"
+      },
+      {
+        "left": "Koordinasi layanan siswa",
+        "right": "Berbagi informasi relevan sesuai peran"
+      },
+      {
+        "left": "Kegiatan bersama masyarakat",
+        "right": "Menjelaskan tujuan dan menyerap masukan"
+      }
+    ],
+    "explanation": "Kolaborasi efektif membutuhkan komunikasi yang sesuai konteks dan tetap menghargai peran masing-masing."
+  },
+  {
+    "id": "SOS-09",
+    "competency": "Sosial",
+    "type": "multi",
+    "title": "Komunikasi profesional",
+    "stimulus": "Guru membuat grup komunikasi untuk orang tua siswa. Ia ingin grup tersebut membantu penyampaian informasi tanpa mengaburkan batas profesional. Ia membedakan informasi umum dan persoalan pribadi, menghindari respons emosional, dan menggunakan bahasa yang sopan. Ia juga mengarahkan persoalan sensitif ke jalur komunikasi yang lebih tepat.",
+    "prompt": "Pilih tindakan yang sesuai dengan kompetensi sosial.",
+    "options": [
+      "Menggunakan bahasa profesional",
+      "Memisahkan informasi umum dan pribadi",
+      "Mengelola respons saat emosi tinggi",
+      "Membahas masalah pribadi siswa di grup umum",
+      "Memilih saluran komunikasi sesuai jenis informasi"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Komunikasi sosial profesional memperhatikan bahasa, konteks, saluran, dan batas informasi."
+  },
+  {
+    "id": "SOS-10",
+    "competency": "Sosial",
+    "type": "multi",
+    "title": "Kolaborasi lintas peran",
+    "stimulus": "Seorang siswa membutuhkan dukungan akademik dan administratif. Guru mata pelajaran, wali kelas, dan tenaga kependidikan memiliki informasi serta kewenangan yang berbeda. Mereka berkoordinasi agar layanan tidak tumpang tindih dan kebutuhan siswa tetap terpenuhi. Tidak ada pihak yang mengambil alih semua tugas sendiri.",
+    "prompt": "Tindakan mana yang tepat dalam situasi tersebut?",
+    "options": [
+      "Berbagi informasi yang relevan",
+      "Menghargai batas kewenangan",
+      "Menyusun langkah secara terkoordinasi",
+      "Menyerahkan semua masalah kepada satu pihak",
+      "Menjaga fokus pada kebutuhan siswa"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Kompetensi sosial tampak dalam koordinasi, penghargaan peran, dan kerja sama untuk kepentingan siswa."
+  },
+  {
+    "id": "INT-01",
+    "competency": "Integratif",
+    "type": "mcq",
+    "title": "Kompetensi dominan",
+    "stimulus": "Bu Aisyah menemukan sebagian siswa belum memahami konsep tertentu. Ia memeriksa hasil asesmen, berbicara dengan siswa tentang kesulitannya, dan mengubah aktivitas belajar. Sebelum menjelaskan kembali, ia memastikan pemahamannya terhadap materi sudah tepat. Beberapa kompetensi muncul dalam situasi tersebut.",
+    "prompt": "Kompetensi yang paling dominan pada keputusan mengubah aktivitas berdasarkan hasil asesmen adalah ....",
+    "options": [
+      "Pedagogik",
+      "Profesional",
+      "Sosial",
+      "Kepribadian"
+    ],
+    "answer": 0,
+    "explanation": "Keputusan menyesuaikan aktivitas berdasarkan hasil asesmen merupakan tindakan pedagogik, meski kompetensi lain juga hadir."
+  },
+  {
+    "id": "INT-02",
+    "competency": "Integratif",
+    "type": "mcq",
+    "title": "Profesional dan pedagogik",
+    "stimulus": "Pak Yanu menemukan video populer yang menjelaskan materi dengan menarik. Setelah diperiksa, ada satu bagian yang secara ilmiah kurang tepat. Ia memperbaiki substansinya sebelum memasukkan video ke kegiatan pembelajaran. Selanjutnya, ia merancang pertanyaan agar siswa dapat menganalisis informasi dalam video.",
+    "prompt": "Kombinasi kompetensi yang paling menonjol adalah ....",
+    "options": [
+      "Kepribadian dan sosial",
+      "Sosial dan pedagogik",
+      "Profesional dan pedagogik",
+      "Profesional dan kepribadian"
+    ],
+    "answer": 2,
+    "explanation": "Verifikasi substansi merupakan kompetensi profesional, sedangkan perancangan aktivitas belajar merupakan kompetensi pedagogik."
+  },
+  {
+    "id": "INT-03",
+    "competency": "Integratif",
+    "type": "mcq",
+    "title": "Kepribadian dan sosial",
+    "stimulus": "Seorang orang tua mengkritik guru dengan nada tinggi dalam sebuah pertemuan. Guru tetap menjaga emosinya dan tidak membalas dengan nada yang sama. Ia mendengarkan keberatan orang tua, kemudian menjelaskan situasi berdasarkan data yang tersedia. Pertemuan akhirnya dapat dilanjutkan dengan pembicaraan yang lebih tenang.",
+    "prompt": "Dua kompetensi yang paling jelas terlihat adalah ....",
+    "options": [
+      "Profesional dan pedagogik",
+      "Kepribadian dan sosial",
+      "Pedagogik dan sosial",
+      "Profesional dan kepribadian"
+    ],
+    "answer": 1,
+    "explanation": "Pengendalian diri mencerminkan kepribadian, sedangkan pengelolaan komunikasi dengan orang tua mencerminkan kompetensi sosial."
+  },
+  {
+    "id": "INT-04",
+    "competency": "Integratif",
+    "type": "mcq",
+    "title": "Kesalahan materi",
+    "stimulus": "Saat menjelaskan materi, guru menyampaikan informasi yang kemudian diketahui kurang tepat. Seorang siswa menunjukkan sumber berbeda dan guru memeriksanya kembali. Setelah memastikan terdapat kesalahan, guru mengoreksi materi di depan kelas dan menjelaskan informasi yang benar. Ia tidak berusaha menutupi kekeliruan tersebut.",
+    "prompt": "Kombinasi kompetensi yang paling tepat adalah ....",
+    "options": [
+      "Pedagogik dan sosial",
+      "Sosial dan profesional",
+      "Pedagogik dan kepribadian",
+      "Profesional dan kepribadian"
+    ],
+    "answer": 3,
+    "explanation": "Memastikan kebenaran materi berkaitan dengan profesionalisme, sedangkan mengakui kesalahan terkait integritas kepribadian."
+  },
+  {
+    "id": "INT-05",
+    "competency": "Integratif",
+    "type": "tf",
+    "title": "Kompetensi bekerja terpisah",
+    "stimulus": "Guru merancang proyek yang sesuai tujuan belajar, memastikan materi benar, membantu kelompok menyelesaikan konflik, dan menjaga sikap adil kepada semua siswa. Setiap tindakan dapat dikaitkan dengan kompetensi berbeda. Dalam praktik nyata, semua tindakan terjadi dalam satu rangkaian kegiatan. Guru tidak memisahkan kompetensi tersebut saat bekerja.",
+    "prompt": "Pernyataan: Empat kompetensi guru hanya dapat muncul satu per satu dan tidak dapat bekerja secara bersamaan dalam satu praktik.",
+    "answer": false,
+    "explanation": "Kompetensi guru bersifat terintegrasi dan dapat muncul bersamaan dalam satu situasi profesional."
+  },
+  {
+    "id": "INT-06",
+    "competency": "Integratif",
+    "type": "tf",
+    "title": "Kompetensi dominan bukan satu-satunya",
+    "stimulus": "Dalam suatu kasus, guru menggunakan asesmen untuk menyesuaikan pembelajaran sambil berkomunikasi dengan orang tua dan memastikan materi yang diberikan akurat. Tindakan pedagogik tampak paling dominan karena keputusan utamanya menyangkut strategi belajar. Namun, unsur sosial dan profesional juga hadir. Kasus seperti ini sering terjadi dalam praktik guru.",
+    "prompt": "Pernyataan: Menentukan kompetensi yang paling dominan tidak berarti kompetensi lain sama sekali tidak terlibat.",
+    "answer": true,
+    "explanation": "Satu situasi dapat melibatkan beberapa kompetensi; istilah dominan hanya menunjuk fokus utama tindakan."
+  },
+  {
+    "id": "INT-07",
+    "competency": "Integratif",
+    "type": "match",
+    "title": "Tindakan dan kompetensi",
+    "stimulus": "Bu Rina menangani satu kelas dengan kebutuhan beragam. Ia menggunakan asesmen untuk menyesuaikan strategi, memperbarui materi, mengakui kesalahan ketika terjadi, dan berkomunikasi dengan orang tua. Semua tindakan terjadi dalam satu periode pembelajaran. Ia ingin memetakan fokus kompetensi dari tiap tindakan.",
+    "prompt": "Jodohkan tindakan dengan kompetensi yang paling tepat.",
+    "pairs": [
+      {
+        "left": "Menggunakan asesmen untuk menyesuaikan strategi",
+        "right": "Pedagogik"
+      },
+      {
+        "left": "Memperbarui pengetahuan bidang ilmu",
+        "right": "Profesional"
+      },
+      {
+        "left": "Mengakui dan memperbaiki kesalahan",
+        "right": "Kepribadian"
+      },
+      {
+        "left": "Berkomunikasi dengan orang tua",
+        "right": "Sosial"
+      }
+    ],
+    "explanation": "Setiap tindakan memiliki fokus kompetensi utama yang berbeda, meskipun praktiknya saling terintegrasi."
+  },
+  {
+    "id": "INT-08",
+    "competency": "Integratif",
+    "type": "match",
+    "title": "Kasus terintegrasi",
+    "stimulus": "Pak Dedi menyiapkan pembelajaran baru dan menghadapi beberapa kebutuhan sekaligus. Ia memperdalam materi, menyesuaikan strategi untuk siswa, meminta masukan kolega, dan merefleksikan kesalahannya sendiri. Ia menyadari setiap tindakan mengaktifkan dimensi kompetensi yang berbeda. Ia ingin memetakan fokus terkuatnya.",
+    "prompt": "Jodohkan tindakan dengan kompetensi utamanya.",
+    "pairs": [
+      {
+        "left": "Memperdalam materi",
+        "right": "Profesional"
+      },
+      {
+        "left": "Menyesuaikan strategi untuk siswa",
+        "right": "Pedagogik"
+      },
+      {
+        "left": "Meminta masukan kolega",
+        "right": "Sosial"
+      },
+      {
+        "left": "Merefleksikan kesalahan diri",
+        "right": "Kepribadian"
+      }
+    ],
+    "explanation": "Kasus integratif menunjukkan empat kompetensi bekerja bersama tetapi tetap dapat dipetakan berdasarkan fokus tindakannya."
+  },
+  {
+    "id": "INT-09",
+    "competency": "Integratif",
+    "type": "multi",
+    "title": "Menangani siswa yang kesulitan",
+    "stimulus": "Seorang siswa beberapa kali tidak mengumpulkan tugas. Guru tidak langsung memberi label negatif, tetapi mengumpulkan informasi mengenai penyebabnya. Ia berbicara secara pribadi dengan siswa, memeriksa kebutuhan belajar, berkoordinasi dengan wali kelas, dan menjaga informasi pribadi. Tindakan tersebut melibatkan lebih dari satu kompetensi.",
+    "prompt": "Pilih kompetensi yang terlibat secara jelas dalam kasus tersebut.",
+    "options": [
+      "Pedagogik",
+      "Profesional",
+      "Kepribadian",
+      "Sosial",
+      "Tidak ada kompetensi yang dominan"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Identifikasi kebutuhan terkait pedagogik, komunikasi/koordinasi terkait sosial, dan menjaga martabat serta kerahasiaan terkait kepribadian."
+  },
+  {
+    "id": "INT-10",
+    "competency": "Integratif",
+    "type": "multi",
+    "title": "Final integratif",
+    "stimulus": "Bu Maya mengajar kelas dengan kemampuan beragam. Ia menggunakan hasil asesmen untuk menyesuaikan strategi, memperbarui pengetahuan bidang yang diajarkan, mengakui kesalahan ketika penjelasannya kurang tepat, dan berkomunikasi secara profesional dengan siswa serta orang tua. Ia melihat kualitas guru tidak bergantung pada satu kemampuan saja. Semua tindakan tersebut mendukung pembelajaran yang bertanggung jawab.",
+    "prompt": "Pilih pasangan tindakan-kompetensi yang tepat.",
+    "options": [
+      "Asesmen untuk strategi — Pedagogik",
+      "Pembaruan ilmu — Profesional",
+      "Mengakui kesalahan — Kepribadian",
+      "Komunikasi dengan siswa/orang tua — Sosial",
+      "Pembaruan ilmu — Sosial"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Empat pasangan pertama tepat dan menggambarkan integrasi keempat kompetensi guru."
+  }
+]

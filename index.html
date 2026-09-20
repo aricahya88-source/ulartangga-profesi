@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#071422" />
-  <title>Ular Tangga 3D — 4 Kompetensi Guru</title>
+  <meta name="description" content="Ular Tangga 3D PlayCanvas — Empat Kompetensi Guru" />
+  <title>Ular Tangga 3D PlayCanvas — 4 Kompetensi Guru</title>
 </head>
 <body>
   <div id="app">
@@ -13,7 +14,11 @@
         <span class="avatar blue">A</span>
         <div><strong id="player-name-0">Player A</strong><small>Petak <b id="player-pos-0">0</b>/50 · Skor <b id="player-score-0">0</b> · Akurasi <b id="player-acc-0">–</b></small></div>
       </section>
-      <section class="title-card"><h1>ULAR TANGGA 3D • 4 KOMPETENSI GURU</h1><span id="zone-pill">Mulai dari petak awal</span></section>
+      <section class="title-card">
+        <span class="engine-chip">PLAYCANVAS ENGINE</span>
+        <h1>ULAR TANGGA 3D • 4 KOMPETENSI GURU</h1>
+        <span id="zone-pill">Mulai dari petak awal</span>
+      </section>
       <section class="player-card red-side" id="player-card-1">
         <span class="avatar red">B</span>
         <div><strong id="player-name-1">Player B</strong><small>Petak <b id="player-pos-1">0</b>/50 · Skor <b id="player-score-1">0</b> · Akurasi <b id="player-acc-1">–</b></small></div>
@@ -22,8 +27,10 @@
 
     <main class="game-grid">
       <section class="scene-panel">
-        <div class="scene-badge">Setiap pendaratan = soal literasi sesuai zona • soal diacak tanpa pengulangan antarpemain</div>
-        <canvas id="renderCanvas" aria-label="Papan Ular Tangga 3D"></canvas>
+        <div class="scene-badge">5 ular • 5 tangga • 5 bonus • angka 1–50 selalu tampil • soal acak tanpa pengulangan antarpemain</div>
+        <canvas id="renderCanvas" aria-label="Papan Ular Tangga 3D PlayCanvas"></canvas>
+        <div id="tile-label-layer" aria-hidden="true"></div>
+        <div class="scene-vignette" aria-hidden="true"></div>
       </section>
 
       <aside class="side-panel">
@@ -38,21 +45,46 @@
         <section class="panel control-panel">
           <small>Giliran</small><h2 id="turn-name">PLAYER A</h2>
           <div class="dice-result">🎲 <strong id="dice-value">–</strong></div>
-          <button id="roll-btn" class="primary">Lempar Dadu</button>
-          <button id="camera-btn">Sudut Papan</button>
+          <button id="roll-btn" class="primary" disabled>Lempar Dadu</button>
+          <button id="camera-btn">Sudut Kamera</button>
+          <div class="camera-hint">Drag = orbit · Scroll = zoom</div>
           <div class="question-count" id="question-count">Soal unik terpakai: 0 / 50</div>
         </section>
-        <section class="panel log-panel"><h2>Log Permainan</h2><div id="log-list"></div></section>
+        <section class="panel log-panel"><h2>Log Permainan</h2><div id="log-list"><div>Papan siap. Mulai pertandingan untuk bermain.</div></div></section>
       </aside>
     </main>
   </div>
 
   <div class="overlay" id="start-overlay">
     <div class="start-card">
-      <span class="eyebrow">Game Edukasi · 1 vs 1 · Babylon.js</span>
+      <span class="eyebrow">Game Edukasi · 1 vs 1 · PlayCanvas Engine + Vite + TypeScript</span>
       <h2>Ular Tangga 3D — Empat Kompetensi Guru</h2>
-      <p>Petak 1–10 Pedagogik, 11–20 Profesional, 21–30 Kepribadian, 31–40 Sosial, dan 41–50 Integratif. Ada 5 ular, 5 tangga, 5 bonus, dan Final Challenge di petak 50.</p>
-      <div class="name-grid"><label>Nama Player A<input id="name-a" value="Player A" maxlength="24"></label><label>Nama Player B<input id="name-b" value="Player B" maxlength="24"></label></div>
+      <p>Petak 1–10 Pedagogik, 11–20 Profesional, 21–30 Kepribadian, 31–40 Sosial, dan 41–50 Integratif. Terdapat 5 ular, 5 tangga, 5 bonus, serta Final Challenge di petak 50.</p>
+      <div class="name-grid">
+        <label>Nama Player A<input id="name-a" value="Player A" maxlength="24"></label>
+        <label>Nama Player B<input id="name-b" value="Player B" maxlength="24"></label>
+      </div>
+      <div class="material-grid">
+        <label>Material pion Player A
+          <select id="material-a">
+            <option value="glossy">Glossy Plastic</option>
+            <option value="metallic">Metallic</option>
+            <option value="matte">Matte</option>
+            <option value="marble">Marble</option>
+          </select>
+        </label>
+        <label>Material pion Player B
+          <select id="material-b">
+            <option value="metallic">Metallic</option>
+            <option value="glossy">Glossy Plastic</option>
+            <option value="matte">Matte</option>
+            <option value="marble">Marble</option>
+          </select>
+        </label>
+      </div>
+      <div class="feature-strip">
+        <span>🐍 Ular animated</span><span>🪜 Tangga 3D</span><span>💡 PBR lighting</span><span>🎥 Kamera sinematik</span>
+      </div>
       <button id="start-btn" class="primary">Mulai Pertandingan</button>
     </div>
   </div>
